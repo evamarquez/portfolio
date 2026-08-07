@@ -45,9 +45,13 @@ Productos completos: frontend, backend, base de datos y usuarios reales del otro
 
 | | |
 |---|---|
-| **80+ automatizaciones en producción** | Para una agencia con 17+ marcas en US, Australia y UK |
+| **Ciclo de vida de cliente** | Onboarding y offboarding completos orquestando Slack, Drive y Airtable |
+| **Pipeline de blogs con IA** | Multi-etapa con callbacks asíncronos, 3 proveedores de IA y minería de Reddit |
 | **SC Lead Finder** | Corre solo cada lunes: encuentra negocios y puntúa con qué entrarles |
-| **Pipeline de scraping** | Scraping estructurado con workflows y plantillas reutilizables |
+| **Reconciliación de pagos** | Listener en tiempo real + reconciliación masiva de Stripe |
+| **Pipeline de scraping** | Destila plantillas reutilizables desde sitios competidores |
+
+**40 automatizaciones documentadas** con blueprint y notas de migración.
 
 → [Ver automatizaciones](automations/)
 
