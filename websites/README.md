@@ -9,8 +9,8 @@ navegador.
 
 **Sitio de una agencia de publicidad en Meta para negocios locales de servicios.**
 
-`Next.js` · `TypeScript` · `Tailwind` · `Vercel`
-🔒 Repo privado · `[CONFIRMAR: URL en vivo]`
+`Next.js` · `TypeScript` · `Tailwind` · `Netlify` · multi-idioma
+🟢 [eraconversions.com](https://eraconversions.com) · 🔒 Repo privado
 
 ### Qué es
 
