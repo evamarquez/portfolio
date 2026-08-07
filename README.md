@@ -1,117 +1,94 @@
 # Eva Marquez
 
-**AI Solutions Engineer · Automation & Internal Tools**
+**AI Solutions Engineer · Automatizaciones, agentes y herramientas internas**
 
-I build the systems that make manual work disappear. Over the last year I shipped
-80+ automations into production: agents that generate content, schedulers that
-publish across nine platforms daily, and internal tools that replaced the
-spreadsheets a whole team was running on.
+Construyo los sistemas que hacen desaparecer el trabajo manual. El último año entregué
+80+ automatizaciones a producción: apps que reemplazaron las hojas de cálculo en las
+que corría un equipo entero, agentes que generan contenido, y schedulers que publican
+en nueve plataformas al día.
 
-I did not come to this from engineering. I came from running things — I founded and
-scaled an e-commerce company, coordinated 120+ agency projects, and ran international
-procurement. That is why the systems I build solve business problems and not just
-technical ones.
+No llegué a esto desde la ingeniería. Llegué desde dirigir cosas — fundé y escalé un
+e-commerce, coordiné 120+ proyectos de agencia y llevé procura internacional. Por eso
+los sistemas que construyo resuelven problemas de negocio y no solo problemas técnicos.
 
-📍 South Carolina, US · Remote · Authorized to work in the US without sponsorship
+📍 South Carolina, US · Remoto · Autorizada para trabajar en EE. UU. sin sponsorship
 🌐 [by-evamarquez.com](https://www.by-evamarquez.com/) ·
 💼 [LinkedIn](https://www.linkedin.com/in/byevamarquez/) ·
 ✉️ evapatriciamarquez@gmail.com
 
 ---
 
-## Selected work
+## 📱 [Apps](apps/)
 
-### 📰 [Newsletter Kit](https://github.com/evamarquez/newsletter-kit) · Python · Open source
-
-Say *"I need a newsletter about X"* and it researches the topic across five parallel
-angles, writes the issue, draws the data charts, generates the editorial illustration,
-renders email-safe HTML, and leaves a draft ready to send. It can also run itself on
-a schedule.
-
-The interesting part is not that an agent writes a newsletter. It is the two rules
-that keep the output stable across forty issues:
-
-- **The agent never writes HTML.** It emits a schema-validated `issue.json`; fixed
-  Jinja templates render it. Email HTML is not web HTML — Outlook renders through the
-  Word engine, Gmail strips most of `<head>`, flexbox and grid are unusable.
-  Hand-generated markup breaks differently every issue. This split is why a visual
-  bug is a one-file fix instead of a re-prompt.
-- **Numbers never go inside a generated image.** A generative model cannot guarantee
-  a bar drawn for 47% is proportionally 47%, and it can alter a digit invisibly. Two
-  separate lanes: one model draws concepts, a script draws data from actual values.
-  The schema enforces it by rejecting digits in image prompts.
-
-Sending is the one irreversible action in the system, so it is guarded in layers:
-brand-level send restrictions, a scheduled workflow with no send flag anywhere, one
-message per recipient rather than a shared `To:`, and a dangling image reference
-treated as fatal rather than a warning.
-
-`Python` `Jinja` `Playwright` `premailer` `GitHub Actions` `Cloudflare R2`
-
-→ [Read the full README](https://github.com/evamarquez/newsletter-kit)
-
----
-
-### ⚙️ [Automation systems at scale](projects/automation-systems.md)
-
-80+ automations shipped into production for an agency running 17+ e-commerce brands
-across the US, Australia and the UK. Article generation that went from two days to
-minutes. A scheduler covering nine platforms daily. A custom CRM that replaced the
-team's Airtable. A reporting agent that removed a manual process end to end.
-
-→ [How they were built](projects/automation-systems.md)
-
----
-
-### 🤖 [Executive Assistant](projects/executive-assistant.md) · Multi-agent system
-
-A personal executive assistant built as a real agent system rather than a chat
-window: persistent context files, scoped rule files, invokable skills, and a
-sub-agent running on a smaller model so heavy research never pollutes the main
-context. Everything version controlled.
-
-→ [Architecture and design decisions](projects/executive-assistant.md)
-
----
-
-### 🎯 SC Lead Finder · TypeScript · Trigger.dev
-
-Weekly unattended automation that finds local businesses in South Carolina with poor
-or missing websites and scores which product to approach them with. Runs every Monday
-without supervision.
-
-*Private repository — available on request.*
-
----
-
-## What I work with
+Productos completos: frontend, backend, base de datos y usuarios reales del otro lado.
 
 | | |
 |---|---|
-| **AI & Agents** | RAG, multi-agent systems, LangChain, LangGraph, Model Context Protocol, prompt engineering, vector databases (Chroma, FAISS), Claude Code |
-| **Automation** | Make, Trigger.dev, scheduled workflows, API integration, webhooks, GitHub Actions |
-| **Engineering** | Python, TypeScript, JavaScript, Git, REST APIs |
-| **Data & platforms** | Airtable, Supabase, Lovable, Vercel, Netlify, Cloudflare, Stripe |
-| **Delivery** | Agile, Kanban, RACI, SOP design, stakeholder management, risk matrices |
+| **De 0 a Remoto** | Plataforma de formación con cuentas, contenido y pagos. Next.js · Supabase · Stripe |
+| **Generador de artículos con IA** | 200+ artículos. De ~2 días por artículo a minutos |
+| **CRM interno** | Reemplazó el Airtable de un equipo de 12. Sigue en uso diario |
+| **Scheduler multiplataforma** | 9+ plataformas al día, 3 posts cada una |
+
+→ [Ver apps](apps/)
+
+## 🌐 [Websites](websites/)
+
+| | |
+|---|---|
+| **by-evamarquez.com** | Sitio personal. Next.js · Supabase · Tailwind |
+| **De 0 a Remoto** | Sitio del producto |
+| **Guía y tests de roles remotos** | Herramienta de evaluación con resultados por perfil |
+
+→ [Ver websites](websites/)
+
+## ⚙️ [Automatizaciones](automations/)
+
+| | |
+|---|---|
+| **80+ automatizaciones en producción** | Para una agencia con 17+ marcas en US, Australia y UK |
+| **SC Lead Finder** | Corre solo cada lunes: encuentra negocios y puntúa con qué entrarles |
+| **Pipeline de scraping** | Scraping estructurado con workflows y plantillas reutilizables |
+
+→ [Ver automatizaciones](automations/)
+
+## 🤖 [Agentes](agents/)
+
+| | |
+|---|---|
+| **Newsletter Kit** 🟢 | Investiga, escribe, grafica y entrega un newsletter. Código público |
+| **Executive Assistant** | Sistema multi-agente con contexto persistente, skills y sub-agentes |
+| **Agente de reportes** | Eliminó por completo un proceso manual recurrente |
+
+→ [Ver agentes](agents/)
 
 ---
 
-## Background
+## Stack
+
+| | |
+|---|---|
+| **IA y agentes** | RAG, sistemas multi-agente, LangChain, LangGraph, Model Context Protocol, prompt engineering, bases vectoriales (Chroma, FAISS), Claude Code |
+| **Automatización** | Make, Trigger.dev, workflows programados, integración de APIs, webhooks, GitHub Actions |
+| **Ingeniería** | Python, TypeScript, JavaScript, Next.js, Git, REST APIs |
+| **Datos y plataformas** | Supabase, Airtable, Lovable, Vercel, Netlify, Cloudflare, Stripe |
+| **Entrega** | Agile, Kanban, RACI, diseño de SOPs, gestión de stakeholders, matrices de riesgo |
+
+## Formación
 
 **MBA** — Florida Global University
-**B.S. International Trade** — Universidad Alejandro de Humboldt
+**Licenciatura en Comercio Internacional** — Universidad Alejandro de Humboldt
 
-**IBM RAG and Agentic AI Professional Certificate** — *in progress*
+**IBM RAG and Agentic AI Professional Certificate** — *en curso*
 **Google Project Management Professional Certificate**
 
-English (C1) · Spanish (native) · French (B1)
+Inglés (C1) · Español (nativo) · Francés (B1)
 
 ---
 
-## Currently
+## Ahora mismo
 
-Open to remote **AI Solutions Engineer**, **AI Automation Engineer** and
-**Implementation Engineer** roles in the US.
+Abierta a roles remotos en EE. UU. de **AI Solutions Engineer**, **AI Automation
+Engineer** e **Implementation Engineer**.
 
-If you are building something where the hard part is making AI actually reliable in
-production, I would like to hear about it.
+Si estás construyendo algo donde lo difícil es que la IA funcione de forma confiable
+en producción, me gustaría saber de ello.
