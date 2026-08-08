@@ -1,231 +1,229 @@
-# Automatizaciones
+# Automations
 
-Sistemas que corren solos y le devuelven horas a alguien todas las semanas.
-Ordenados por complejidad, no por dónde los construí.
+Systems that run on their own and give somebody hours back every week.
+Ordered by complexity, not by where I built them.
 
 ---
 
-# ⭐ Ciclo de vida completo de un cliente
+# ⭐ Full client lifecycle
 
-**Onboarding y offboarding automatizados de punta a punta**, orquestando Slack, Google
-Drive, Airtable y Fillout en una sola cadena.
+**Onboarding and offboarding automated end to end**, orchestrating Slack, Google
+Drive, Airtable and Fillout in a single chain.
 
 `Make` · `Slack API` · `Google Drive API` · `Airtable` · `Fillout`
-🏢 Trabajo de cliente · blueprints no publicados
+🏢 Client work · blueprints not published
 
-### Qué es
+### What it is
 
-Cuando una agencia firma un cliente nuevo, hay unas veinte cosas que tienen que pasar,
-en orden, sin que se olvide ninguna. Y cuando un cliente se va, otras tantas. Todo eso
-se hacía a mano, con checklist, y se olvidaban pasos.
+When an agency signs a new client there are about twenty things that have to happen,
+in order, without a single one being forgotten. And when a client leaves, another
+twenty. All of it was done by hand, with a checklist, and steps got missed.
 
-Lo convertí en una cadena automatizada:
+I turned it into an automated chain.
 
-**Al entrar un cliente:**
-1. Llega el formulario de onboarding → se valida el ID y se cargan los datos
-2. Se crean los canales de Slack, interno y externo con el cliente
-3. Se invita al equipo que corresponde a cada canal
-4. Se crea la carpeta del cliente en Drive, con más de 4 plantillas ya copiadas dentro
-5. Se guardan todos los IDs generados de vuelta en Airtable
-6. Se agrega el bookmark del documento de PR al canal del cliente
-7. Cuando el cliente acepta la invitación de Slack, se dispara la bienvenida, se le
-   asigna la auditoría técnica al desarrollador, se crea la tarea en Airtable y se
-   notifica al fundador para los documentos de facturación
+**When a client comes in:**
+1. The onboarding form arrives, the ID is validated and the data loaded
+2. Slack channels get created, internal and shared with the client
+3. The right people are invited to each channel
+4. The client folder is created in Drive, with 4+ templates already copied in
+5. Every generated ID is written back to Airtable
+6. The PR document bookmark is added to the client channel
+7. When the client accepts the Slack invite, that fires the welcome message, assigns
+   the technical audit to the developer, creates the task in Airtable, and notifies
+   the founder for the billing documents
 
-**Al salir un cliente:**
-Se archivan los canales, se mueve la carpeta a "Archived Brands", se actualizan los
-flags en Airtable, y se notifica a operaciones con **el checklist de lo que sí queda
+**When a client leaves:**
+Channels are archived, the folder moves to "Archived Brands", the offboarding flags
+update in Airtable, and operations gets notified with **the checklist of what stays
 manual**.
 
-### Decisiones de diseño
+### Design decisions
 
-**Idempotencia sobre reintentos.** Estas cadenas tocan sistemas externos que fallan.
-Cada paso verifica si su efecto ya existe antes de ejecutarlo, para que un reintento
-no cree el canal de Slack dos veces ni duplique la carpeta.
+**Idempotency over retries.** These chains touch external systems that fail. Every
+step checks whether its effect already exists before running, so a retry does not
+create the Slack channel twice or duplicate the folder.
 
-**El offboarding entrega un checklist de lo manual.** No todo se puede automatizar —
-hay accesos y contratos que alguien tiene que cerrar a mano. En vez de fingir cobertura
-total, el sistema termina diciendo exactamente qué falta.
+**Offboarding hands over a checklist of what stays manual.** Not everything can be
+automated. There are accesses and contracts a person has to close. Instead of
+pretending full coverage, the system ends by stating exactly what is left.
 
-**La versión vieja está documentada como deprecada, con sus bugs.** El onboarding
-anterior corría en Zapier y tenía cinco errores identificados: IDs incorrectos, un
-canal hardcodeado y un JSON malformado. Está archivado con esos bugs escritos, porque
-saber por qué se reemplazó algo vale más que borrarlo.
+**The old version is documented as deprecated, with its bugs.** The previous
+onboarding ran on Zapier and had five identified defects: wrong IDs, a hardcoded
+channel and malformed JSON. It is archived with those bugs written down, because
+knowing why something was replaced is worth more than deleting it.
 
 ---
 
-# ⭐ Pipeline de generación de blogs con IA
+# ⭐ AI blog generation pipeline
 
-**Cadena multi-etapa que investiga, redacta y entrega artículos SEO**, con callbacks
-asíncronos entre Make, Google Apps Script y tres proveedores de IA distintos.
+**A multi-stage chain that researches, drafts and delivers SEO articles**, with async
+callbacks between Make, Google Apps Script and three different AI providers.
 
 `Make` · `Google Apps Script` · `OpenAI` · `Claude` · `Perplexity` · `Reddit API` · `Airtable`
-🏢 Trabajo de cliente · blueprints no publicados
+🏢 Client work · blueprints not published
 
-### Qué es
+### What it is
 
-El sistema detrás de los 200+ artículos. No es una llamada a un modelo: es un pipeline
-con varias fases, cada una en un sistema distinto, coordinadas por callbacks.
+The system behind the 200+ articles. It is not a call to a model: it is a pipeline
+with several phases, each in a different system, coordinated by callbacks.
 
-Produce dos tipos de artículo con estructuras distintas — *"Marca vs Competidor"* y
-*"Alternativas al competidor"* — y cada uno tiene su propia cadena.
+It produces two article types with different structures, *"Brand vs Competitor"* and
+*"Alternatives to competitor"*, and each has its own chain.
 
-**Cómo corre una generación:**
-1. Un checkbox en Airtable dispara el flujo, o alguien lo lanza manualmente
-2. Make llama a Google Apps Script y **libera el hilo** — la generación tarda minutos
-3. Fase de investigación: Perplexity para el research, y **la API de Reddit con OAuth
-   para minar comentarios reales** sobre la marca y el competidor, con reintentos y
-   manejo de errores
-4. Fase de redacción: cuatro prompts encadenados de OpenAI, alternando modelos según
-   la tarea
-5. Se crea el Google Doc en la carpeta del sprint que corresponde
-6. El script llama de vuelta al webhook de Make, que actualiza Airtable con la URL
+**How one generation runs:**
+1. A checkbox in Airtable triggers the flow, or somebody launches it manually
+2. Make calls Google Apps Script and **releases the thread**, because generation takes
+   minutes
+3. Research phase: Perplexity for the research, and **the Reddit API with OAuth to mine
+   real comments** about the brand and the competitor, with retries and error handling
+4. Drafting phase: four chained OpenAI prompts, switching models per task
+5. The Google Doc gets created in the right sprint folder
+6. The script calls back to the Make webhook, which updates Airtable with the URL
 
-### Decisiones de diseño
+### Design decisions
 
-**Asíncrono con callback, no espera bloqueante.** Un flujo que espera minutos a que
-termine un modelo consume operaciones y se cae por timeout. La generación se dispara,
-el flujo termina, y el script avisa cuando acabó. Es la diferencia entre un pipeline
-que escala y uno que se rompe con volumen.
+**Async with callback, not blocking wait.** A flow that waits minutes for a model to
+finish burns operations and dies on timeout. Generation gets fired, the flow ends, and
+the script reports back when it's done. That is the difference between a pipeline that
+scales and one that breaks under volume.
 
-**Cada proveedor donde es mejor.** Perplexity para búsqueda con fuentes, OpenAI para
-redacción larga, Claude para el procesamiento de contenido raspado. Casar el sistema
-con un solo proveedor habría significado usar la peor herramienta en dos de las tres
-etapas.
+**Each provider where it is best.** Perplexity for sourced research, OpenAI for long
+drafting, Claude for processing scraped content. Marrying the system to a single
+provider would have meant using the worst tool for two of the three stages.
 
-**Reddit como fuente, no como relleno.** La diferencia entre un artículo genérico y
-uno útil es si contiene lo que la gente realmente dice del producto. Minar comentarios
-reales fue una decisión de calidad, no de volumen.
+**Reddit as a source, not filler.** The difference between a generic article and a
+useful one is whether it contains what people actually say about the product. Mining
+real comments was a quality decision, not a volume one.
 
 ---
 
 # ⭐ SC Lead Finder
 
-**Encuentra negocios locales con webs malas y puntúa con qué producto entrarles.**
-Corre solo cada lunes.
+**Finds local businesses with bad or missing websites and scores which product to
+approach them with.** Runs on its own every Monday.
 
 `TypeScript` · `Trigger.dev`
-🔒 Repo privado · disponible bajo petición
+🔒 Private repo · available on request
 
-### Qué es
+### What it is
 
-Automatización de prospección para mi agencia. Cada lunes, sin que nadie la toque,
-recorre negocios locales de South Carolina, evalúa el estado de su presencia web y
-devuelve una lista **ordenada por oportunidad**.
+A prospecting automation for my agency. Every Monday, untouched, it walks local
+businesses in South Carolina, evaluates the state of their web presence, and returns a
+list **ordered by opportunity**.
 
-Para cada negocio revisa si tiene sitio, si funciona, si está actualizado y qué tan mal
-está. Con eso puntúa con qué producto acercarse: a uno sin web, una web desde cero; a
-uno con web decente pero sin captación, pauta; a los más avanzados, automatización.
+For each business it checks whether there is a site, whether it works, whether it's
+current and how bad it is. From that it **scores which product makes sense to
+approach with**: a site from scratch for one with none, ad spend for one with a decent
+site but no lead capture, automation for the more advanced ones.
 
-La salida es con lo que el equipo comercial arranca el lunes.
+The output is what the sales side starts Monday morning with.
 
-### Decisiones de diseño
+### Design decisions
 
-**Desatendida de verdad.** No notifica para pedir permiso ni espera confirmación en un
-paso intermedio. Si necesita supervisión semanal, no resolvió el problema — solo lo
-movió de lugar.
+**Genuinely unattended.** It does not notify to ask permission or wait for
+confirmation at an intermediate step. If it needs weekly supervision, it did not solve
+the problem, it just moved it.
 
-**Puntúa, no solo lista.** Una lista de 200 negocios sin priorizar es tan inútil como
-no tenerla. El valor está en el orden.
+**It scores, it does not just list.** A list of 200 businesses with no priority is as
+useless as no list. The value is the ordering.
 
-`[FALTA: ejemplo de salida, sin datos de negocios reales]`
+`[MISSING: sample output, without real business data]`
 
 ---
 
-# ⭐ Reconciliación de datos de pagos
+# ⭐ Payment data reconciliation
 
-**Dos estrategias complementarias para el mismo problema**: emparejar clientes de
-Stripe con registros internos.
+**Two complementary strategies for the same problem**: matching Stripe customers to
+internal records.
 
 `Make` · `Stripe API` · `Airtable`
-🏢 Trabajo de cliente · blueprints no publicados
+🏢 Client work · blueprints not published
 
-### Qué es
+### What it is
 
-El sistema de facturación y el CRM interno vivían separados, así que nadie sabía con
-certeza qué registro de Airtable correspondía a qué cliente de Stripe. Eso rompe los
-reportes de ingresos y el seguimiento de renovaciones.
+Billing and the internal CRM lived apart, so nobody knew with certainty which Airtable
+record matched which Stripe customer. That breaks revenue reporting and renewal
+tracking.
 
-Lo resolví con dos automatizaciones que se complementan:
+I solved it with two automations that complement each other:
 
-**Reconciliación masiva** — recorre todos los clientes de Stripe y busca coincidencia
-en Airtable por correo o por nombre, guardando el Customer ID donde corresponde. Limpia
-el histórico.
+**Bulk reconciliation** walks every Stripe customer and looks for a match in Airtable
+by email or name, writing the Customer ID where it belongs. It cleans up history.
 
-**Listener en tiempo real** — escucha eventos de checkout de Stripe y, si es el primer
-pago de ese cliente, captura el Customer ID en el momento. Evita que el problema
-vuelva a crecer.
+**Real-time listener** watches Stripe checkout events and, if it is that customer's
+first payment, captures the Customer ID right then. It stops the problem from growing
+back.
 
-### Decisión de diseño
+### Design decision
 
-**Limpiar el pasado y cerrar la fuga, por separado.** Solo el listener habría dejado
-sin resolver todo el histórico. Solo la reconciliación masiva habría requerido correrla
-para siempre cada semana. Los dos juntos convierten un problema recurrente en uno
-resuelto.
+**Clean the past and close the leak, separately.** The listener alone would have left
+the entire backlog unresolved. Bulk reconciliation alone would have needed rerunning
+forever. Together they turn a recurring problem into a solved one.
 
 ---
 
-# ⭐ Pipeline de scraping estructurado
+# ⭐ Structured scraping pipeline
 
-**Extrae la estructura de sitios competidores y destila una plantilla reutilizable.**
+**Extracts the structure of competitor sites and distills a reusable template.**
 
-`Firecrawl` · `Claude Code` · workflows en markdown
+`Firecrawl` · `Claude Code` · markdown workflows
 
-### Qué es
+### What it is
 
-Resuelve un problema concreto de mi agencia: **cuando llega un cliente nuevo de un
-nicho, no armar la página desde cero.**
+It solves a concrete problem for my agency: **when a new client arrives in a niche,
+don't build the page from scratch.**
 
-Se le apunta a 2-3 competidores del rubro — técnicos de aire acondicionado, por
-ejemplo — y el pipeline scrapea sus sitios, analiza qué estructura, secciones y
-elementos de conversión tienen en común, y **produce una plantilla genérica** para ese
-nicho. Después, con el cliente real, solo se cambian datos, colores y copy.
+You point it at 2-3 competitors in the vertical, HVAC technicians for example, and the
+pipeline scrapes their sites, analyzes what structure, sections and conversion
+elements they have in common, and **produces a generic template** for that niche. Then
+with the real client you only change data, colors and copy.
 
-Es la diferencia entre entregar una web en dos semanas o en dos días.
+It is the difference between shipping a site in two weeks and shipping it in two days.
 
-### Decisiones de diseño
+### Design decisions
 
-**La salida no es data cruda, es una plantilla.** Scrapear tres competidores y guardar
-el HTML no sirve de nada. El valor está en qué tienen en común y qué de eso se
-reutiliza. Ese análisis es parte del pipeline; si no, solo movió el trabajo.
+**The output is not raw data, it is a template.** Scraping three competitors and
+saving the HTML is worth nothing. The value is in what they share and what of that can
+be reused. That analysis is part of the pipeline, otherwise the pipeline only moved
+the work instead of removing it.
 
-**El proceso vive en markdown, la ejecución en código.** Los SOPs describen qué hacer
-y en qué orden; las herramientas ejecutan. Cambiar el criterio es editar un documento.
+**The process lives in markdown, execution lives in code.** SOPs describe what to do
+and in what order; the tools execute. Changing the analysis criteria is editing a
+document.
 
 ---
 
-## El resto del catálogo
+## The rest of the catalog
 
-**40 automatizaciones documentadas**, cada una con su blueprint exportable y sus notas
-de qué hace, de qué depende y cómo migrarla. Una muestra:
+**40 automations documented**, each with its exportable blueprint and notes on what it
+does, what it depends on, and how to migrate it. A sample:
 
-| Automatización | Qué hace |
+| Automation | What it does |
 |---|---|
-| **Balanceo de carga de backlinks** | Asigna cada backlink al slot del sprint con menos carga, equilibrando por fecha de entrega |
-| **Monitor de tiendas** | Vigila cambios de tema en las tiendas Shopify de los clientes y alerta si detecta modificaciones |
-| **Watcher de correo** | Captura reportes de Ahrefs y SEMrush desde Gmail, los guarda, espera a que se vinculen por dominio y notifica al canal del cliente |
-| **RSS de competidores** | Cron diario que lee el RSS de sitios competidores y guarda los artículos nuevos en una base dedicada |
-| **Estructura de sprints en Drive** | Al crear un sprint, genera la jerarquía de carpetas y guarda los IDs de vuelta en el registro |
-| **Documentos por página** | Copia la plantilla correcta según el tipo de página y enlaza el documento al registro |
-| **Reporte mensual por Slack** | Itera clientes y marcas, arma y envía el reporte de rendimiento |
-| **Resumen semanal de entregas** | Cron de viernes: resumen de backlinks y páginas entregadas, al canal de cada marca |
-| **Scraper con procesamiento IA** | Raspa la URL viva de una página, la procesa con Claude y genera el documento, sin duplicar si ya existe |
-| **Subescenario de clientes** | Componente reutilizable que devuelve todos los clientes con sus marcas, llamado por las demás automatizaciones |
+| **Backlink load balancing** | Assigns each backlink to the sprint slot with the lightest load, balancing by delivery date |
+| **Store monitor** | Watches Shopify theme changes on client stores and alerts on modification |
+| **Inbox watcher** | Captures Ahrefs and SEMrush reports from Gmail, stores them, waits for domain linking and notifies the client channel |
+| **Competitor RSS** | Daily cron reading competitor site RSS and storing new articles in a dedicated base |
+| **Sprint folder structure** | On sprint creation, generates the Drive folder hierarchy and writes the IDs back to the record |
+| **Per-page documents** | Copies the right template by page type and links the document to the record |
+| **Monthly Slack report** | Iterates clients and brands, assembles and sends the performance report |
+| **Weekly delivery digest** | Friday cron: summary of backlinks and pages delivered, to each brand channel |
+| **Scraper with AI processing** | Scrapes a page's live URL, processes it with Claude and generates the document, skipping if one already exists |
+| **Client subscenario** | Reusable component returning all clients with their brands, called by the other automations |
 
-### Cómo pienso este trabajo
+### How I think about this work
 
-**Automatizar lo repetible, dejar el juicio en manos humanas.** Cada sistema elimina
-trabajo mecánico y deja la decisión con una persona.
+**Automate the repeatable, keep judgment human.** Every system removes mechanical work
+and leaves the decision with a person.
 
-**Los subescenarios existen por algo.** Cuando diez automatizaciones necesitan la
-lista de clientes, se construye una vez y las demás la llaman. Copiar la lógica diez
-veces es garantizar que nueve queden desactualizadas.
+**Subscenarios exist for a reason.** When ten automations need the client list, you
+build it once and the rest call it. Copying the logic ten times guarantees nine of
+them go stale.
 
-**Escribe el SOP o no pasó.** Un sistema que solo una persona sabe operar es un pasivo.
-Las 40 quedaron documentadas con su blueprint y sus notas — por eso el equipo pudo
-seguir operándolas cuando terminó mi contrato.
+**Write the SOP or it didn't happen.** A system only one person can operate is a
+liability. All 40 were documented with their blueprint and notes, which is why the
+team could keep running them after my contract ended.
 
-**Documenta los bugs, incluso los tuyos.** Varias automatizaciones tienen advertencias
-escritas: una búsqueda sin filtro que puede fallar con múltiples clientes, un ID usado
-contra la tabla equivocada, un blueprint parcial. Están anotadas para quien venga
-después, no escondidas.
+**Document the bugs, including your own.** Several automations carry written warnings:
+a lookup without a filter that can break with multiple clients, an ID used against the
+wrong table, a partial blueprint. They are noted for whoever comes next, not hidden.

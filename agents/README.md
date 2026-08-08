@@ -1,164 +1,159 @@
-# Agentes
+# Agents
 
-Sistemas donde un modelo toma decisiones dentro de una estructura que yo diseñé.
+Systems where a model makes decisions inside a structure I designed.
 
-La parte interesante nunca es que un agente escriba algo. Es qué le dejas decidir y
-qué le quitas de las manos.
+The interesting part is never that an agent writes something. It is what you let it
+decide and what you take out of its hands.
 
 ---
 
 # ⭐ Newsletter Kit
 
-**Dices "necesito un newsletter sobre X"** y el sistema investiga el tema, escribe la
-edición, dibuja los gráficos de datos, genera la ilustración editorial, renderiza HTML
-compatible con clientes de correo y deja un borrador listo. También puede correr solo
-en un horario.
+**Say "I need a newsletter about X"** and the system researches the topic, writes the
+issue, draws the data charts, generates the editorial illustration, renders email-safe
+HTML and leaves a draft ready to send. It can also run itself on a schedule.
 
 `Python` · `Jinja` · `Playwright` · `premailer` · `GitHub Actions` · `Cloudflare R2`
-🟢 **[Código público](https://github.com/evamarquez/newsletter-kit)** · MIT
+🟢 **[Public code](https://github.com/evamarquez/newsletter-kit)** · MIT
 
-### La arquitectura
+### The architecture
 
-Construido sobre el patrón **WAT** (Workflows, Agents, Tools): SOPs en markdown
-describen el trabajo, el agente orquesta, y scripts de Python ejecutan. El
-razonamiento probabilístico se queda donde ayuda; todo lo repetible es código
-determinista.
+Built on the **WAT** pattern (Workflows, Agents, Tools): markdown SOPs describe the
+work, the agent orchestrates, Python scripts execute. Probabilistic reasoning stays
+where it helps; everything repeatable is deterministic code.
 
 ```
-tema ─→ research_topic.py ──→ [issue.json] ──┬─→ make_infographic.py ──┐
-        (5 ángulos en        (validado        │   (Playwright → PNG)    │
-         paralelo)            contra schema)  └─→ generate_image.py ────┤
-                                                                        ↓
-  log_issue.py ←── send_gmail.py ──────────────────── render_newsletter.py
-  (archivo)        (SMTP + imágenes CID)              (Jinja + premailer)
+topic ─→ research_topic.py ──→ [issue.json] ──┬─→ make_infographic.py ──┐
+         (5 parallel angles)   (schema-        │   (Playwright → PNG)    │
+                                validated)     └─→ generate_image.py ────┤
+                                                                         ↓
+   log_issue.py ←── send_gmail.py ──────────────────── render_newsletter.py
+   (archive)        (SMTP + inline CID images)          (Jinja + premailer)
 ```
 
-### Las dos reglas sobre las que descansa el diseño
+### The two rules the design rests on
 
-**El agente nunca escribe HTML.** Produce un `issue.json` validado contra schema, y
-plantillas Jinja fijas lo renderizan. El HTML de correo no es HTML web: Outlook
-renderiza con el motor de Word, Gmail elimina casi todo el `<head>`, flexbox y grid
-son inutilizables. El markup generado a mano se rompe distinto en cada edición. Esta
-separación es la razón de que la edición #1 y la #40 se vean idénticas, y de que un
-bug visual sea un cambio en un archivo y no un re-prompt.
+**The agent never writes HTML.** It produces a schema-validated `issue.json`, and
+fixed Jinja templates render it. Email HTML is not web HTML: Outlook renders through
+the Word engine, Gmail strips most of `<head>`, flexbox and grid are unusable.
+Hand-generated markup breaks differently every issue. This split is why issue #1 and
+issue #40 look identical, and why a visual bug is a one-file fix instead of a
+re-prompt.
 
-**Los números nunca van dentro de una imagen generada.** Un modelo generativo no puede
-garantizar que una barra dibujada para 47% mida proporcionalmente 47%, y puede alterar
-un dígito de forma invisible. Dos carriles separados: un modelo dibuja conceptos, un
-script dibuja datos desde los valores reales. El schema lo hace cumplir rechazando
-dígitos en los prompts de imagen.
+**Numbers never go inside a generated image.** A generative model cannot guarantee
+that a bar drawn for 47% is proportionally 47%, and it can alter a digit invisibly.
+Two separate lanes: one model draws concepts, a script draws data from the actual
+values. The schema enforces it by rejecting digits in image prompts.
 
 ### Guardrails
 
-Enviar es la única acción irreversible del sistema, así que está protegida en capas:
-restricción de envío a nivel de marca, un workflow programado que no tiene la bandera
-de envío en ningún lado, un mensaje por destinatario en vez de exponer la lista, y una
-referencia de imagen rota tratada como error fatal y no como advertencia — una campaña
-enviada no se puede recuperar.
+Sending is the one irreversible action in the system, so it is guarded in layers:
+brand-level send restriction, a scheduled workflow with no send flag anywhere, one
+message per recipient rather than exposing the list, and a broken image reference
+treated as a fatal error rather than a warning. A sent campaign cannot be recalled.
 
-### Aprendizajes documentados
+### Documented learnings
 
-El README incluye una sección de lo que salió mal: el autoescaping de Jinja rompiendo
-un font stack de CSS de forma silenciosa, `strftime` usando el locale de la máquina y
-no el del contenido, artefactos de CI que reportan éxito sin subir nada. Están ahí
-porque es la parte que ahorra tiempo a quien construya algo parecido.
+The README includes a section on what went wrong: Jinja autoescaping silently breaking
+a CSS font stack, `strftime` using the machine's locale instead of the content's, CI
+artifacts reporting success while uploading nothing. They are there because that is
+the part that saves time for whoever builds something similar.
 
-→ **[Ver el repositorio completo](https://github.com/evamarquez/newsletter-kit)**
+→ **[See the full repository](https://github.com/evamarquez/newsletter-kit)**
 
 ---
 
 # ⭐ Executive Assistant
 
-**Asistente ejecutivo construido como sistema multi-agente**, no como una ventana de
-chat con un prompt largo.
+**A personal executive assistant built as a multi-agent system**, not a chat window
+with a long prompt.
 
 `Claude Code` · `Model Context Protocol` · `Firecrawl` · `Git`
-🔒 Repo privado — contiene contexto personal de negocio
+🔒 Private repo, contains personal business context
 
-### El problema con el chat
+### The problem with chat
 
-Un asistente de chat olvida. Cada conversación empieza en cero, así que reexplicas tu
-negocio, tus prioridades y tus preferencias antes de poder pedir algo. Te ayuda a
-llegar al 50% en vez del 90%, y la diferencia es contexto que ya diste la semana
-pasada.
+A chat assistant forgets. Every conversation starts from zero, so you re-explain your
+business, your priorities and your preferences before you can ask for anything. It
+gets you 50% of the way there instead of 90%, and the gap is entirely context you
+already provided last week.
 
-### La arquitectura
+### The architecture
 
 ```
-CLAUDE.md          punteros, no contenido — se carga en cada mensaje
-context/           quién soy, el negocio, prioridades, metas
+CLAUDE.md          pointers, not content. Loaded on every message
+context/           who I am, the business, priorities, goals
 .claude/
-  rules/           un archivo por tema: tono, voz pública, criterios
-  skills/          procedimientos invocables, con YAML front matter
-  agents/          sub-agentes con contexto y modelo propios
-projects/          una carpeta por frente activo, los outputs viven ahí
-decisions/log.md   append-only: qué se decidió y por qué
+  rules/           one file per topic: tone, public voice, decision criteria
+  skills/          invokable procedures with YAML front matter
+  agents/          sub-agents with their own context and model
+projects/          one folder per active workstream, outputs live there
+decisions/log.md   append-only: what was decided and why
 ```
 
-### Tres decisiones de diseño
+### Three design decisions
 
-**El cerebro guarda punteros, no contenido.** `CLAUDE.md` se carga completo en cada
-mensaje, así que meter ahí el contexto de negocio quemaría la ventana antes de la
-primera pregunta. En su lugar dice *"si necesitas saber de prioridades, lee este
-archivo"*. El contexto se carga bajo demanda. El archivo se queda bajo 150 líneas y el
-sistema sabe todo.
+**The brain holds pointers, not content.** `CLAUDE.md` loads in full on every message,
+so putting business context in it would burn the window before the first question.
+Instead it says *"if you need to know about priorities, read this file."* Context loads
+on demand. The file stays under 150 lines and the system still knows everything.
 
-**Skills y sub-agentes son herramientas distintas.** Una skill corre en el contexto
-actual con el modelo actual: es un procedimiento que quieres que se siga. Un
-sub-agente recibe contexto fresco y puede correr un modelo distinto y más barato: es
-para trabajo que produce mucho output intermedio que nadie necesita ver. El research
-que barre veinte fuentes va a un sub-agente; la conversación principal recibe el
-reporte, no el proceso.
+**Skills and sub-agents are different tools.** A skill runs in the current context with
+the current model: it is a procedure you want followed. A sub-agent gets a fresh
+context window and can run a different, cheaper model: it is for work that produces a
+lot of intermediate output nobody needs to see. Research that sweeps twenty sources
+goes to a sub-agent; the main conversation gets the report, not the process.
 
-**Las decisiones son append-only.** Nunca se edita una entrada. Cuando algo cambia,
-una nueva la revierte y explica por qué. Seis meses después el razonamiento es la
-parte valiosa: *"probamos esto y no funcionó porque X"* es información cara de perder.
+**Decisions are append-only.** Entries are never edited. When something changes, a new
+one reverts it and explains why. Six months later the reasoning is the valuable part:
+*"we tried this and it did not work because X"* is expensive information to lose.
 
-### Por qué mejora con el uso
+### Why it improves with use
 
-Cada reporte, borrador y decisión se escribe a un archivo dentro del proyecto. Se
-limpia la conversación y el asistente retoma leyéndolos. El sistema acumula en vez de
-reiniciarse.
+Every report, draft and decision is written to a file inside the project. Clear the
+conversation and the assistant picks up by reading them. The system compounds instead
+of resetting.
 
 ---
 
-# ⭐ Agente de reportes
+# ⭐ Reporting agent
 
-**Eliminó por completo un proceso manual recurrente** en una agencia de SEO.
+**Removed a recurring manual process end to end** at an SEO agency.
 
-🏢 Trabajo de cliente · código no publicado
+🏢 Client work · code not published
 
-### El problema
+### The problem
 
-Un reporte recurrente que se armaba a mano: extraer los datos, ordenarlos, darles
-formato y entregarlos. El tipo de tarea que consume una porción predecible de cada
-semana y no deja nada que nadie recuerde haber hecho.
+A recurring report assembled by hand: pull the data, order it, format it, deliver it.
+The kind of task that eats a predictable slice of every week and leaves nothing anyone
+remembers doing.
 
-### Qué construí
+### What I built
 
-Un agente que extrae los datos de las fuentes, arma el reporte y lo entrega.
+An agent that pulls the data from the sources, assembles the report and delivers it.
 
-### Resultado
+### Result
 
-El proceso manual desapareció de punta a punta. No se redujo: se eliminó.
+The manual process disappeared end to end. It was not reduced, it was removed.
 
-### Decisión de diseño
+### Design decision
 
-**El agente no interpreta los números, los presenta.** Pedirle a un modelo que
-concluya sobre datos de rendimiento es pedirle que invente una narrativa. Extrae,
-calcula y formatea de manera determinista; el análisis lo hace quien conoce al cliente.
+**The agent presents the numbers, it does not interpret them.** Asking a model to draw
+conclusions from performance data is asking it to invent a narrative. It extracts,
+calculates and formats deterministically; the analysis is done by whoever knows the
+client.
 
 ---
 
-## El resto
+## Everything else
 
-Skills de Claude Code construidas durante un reto de 7 días de sistemas de IA:
+Claude Code skills built during a 7-day AI systems challenge:
 
-| Skill | Qué hace |
+| Skill | What it does |
 |---|---|
-| **Diagramas Excalidraw** | Genera diagramas editables a partir de una descripción |
-| **Generación de imágenes controlada** | Prompts parametrizados en JSON para imágenes hiperrealistas, evitando el aspecto plástico de IA |
-| **Frontend design** | Interfaces con criterio de diseño, evitando el resultado genérico |
-| **Video a website** | Convierte un video en un sitio animado con scroll |
+| **Excalidraw diagrams** | Generates editable diagrams from a description |
+| **Controlled image generation** | Parameterized JSON prompts for hyper-realistic images, avoiding the plastic AI look |
+| **Frontend design** | Interfaces with real design judgment, avoiding generic output |
+| **Video to website** | Turns a video into an animated scroll-driven site |
 
-Cada una con YAML front matter que define **cuándo** invocarla, no solo qué hace.
+Each one with YAML front matter defining **when** to invoke it, not just what it does.

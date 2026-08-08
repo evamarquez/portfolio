@@ -1,168 +1,163 @@
 # Websites
 
-Sitios que diseñé y construí desde el código. No uso Figma: diseño directo en el
-navegador.
+Sites I designed and built, from the code. I don't use Figma. I design in the
+browser.
 
 ---
 
 # ⭐ Eras Conversion
 
-**Sitio de una agencia de publicidad en Meta para negocios locales de servicios.**
+**Agency site for a Meta advertising partnership serving local service businesses.**
 
-`Next.js` · `TypeScript` · `Tailwind` · `Netlify` · multi-idioma
-🟢 [eraconversions.com](https://eraconversions.com) · 🔒 Repo privado
+`Next.js` · `TypeScript` · `Tailwind` · `Netlify` · multi-language
+🟢 [eraconversions.com](https://eraconversions.com) · 🔒 Private repo
 
-### Qué es
+### What it is
 
-Eras Conversion es una agencia que llevo en sociedad con dos socias. Nos
-especializamos en **publicidad en Meta para negocios locales de servicios**: técnicos
-de aire acondicionado, empresas de landscaping y servicios de limpieza. El tipo de
-negocio que vive de que suene el teléfono.
+Eras Conversion is an agency I run with two partners. We specialize in **Meta
+advertising for local service businesses**: HVAC technicians, landscaping companies
+and cleaning services. The kind of business that lives or dies by the phone ringing.
 
-Dentro de la sociedad **yo lidero el servicio de páginas web y las automatizaciones**.
-Este sitio es la cara pública de la agencia: explica a qué nicho servimos, cómo
-trabajamos y cómo empezar.
+Inside the partnership **I lead the web service and the automations**. This site is
+the agency's public face: who we serve, how we work, and how to start.
 
-El visitante típico no es una startup. Es el dueño de un negocio de HVAC que quiere
-más llamadas y no tiene tiempo ni interés en aprender de marketing. El sitio está
-escrito para esa persona, no para otra agencia.
+The typical visitor is not a startup. It is the owner of an HVAC business who wants
+more calls and has no time or interest in learning marketing. The site is written for
+that person, not for another agency.
 
-### El problema del negocio detrás del sitio
+### The business problem behind the site
 
-Nuestros clientes empezaron a pedir cada vez más **páginas web**, no solo pauta. El
-objetivo era poder ofrecer las webs más económicas del nicho, y para cobrar menos hay
-que **tardar menos**.
+Our clients started asking for **websites**, not just ad spend. The goal was to offer
+the most affordable sites in the niche, and to charge less you have to **take less
+time**.
 
-Ese es el problema que estoy resolviendo con sistemas: un cliente de HVAC y otro de
-landscaping necesitan la misma estructura de página, las mismas secciones de
-conversión y los mismos elementos de confianza. Cambia el copy, los colores y los
-datos, no la arquitectura.
+That is the problem I'm solving with systems: an HVAC client and a landscaping client
+need the same page structure, the same conversion sections and the same trust
+elements. What changes is the copy, the colors and the data. Not the architecture.
 
-### Qué construí
+### What I built
 
-- El sitio de la agencia, desde cero, en código
-- Un **sistema de plantillas por nicho**: se scrapean 2-3 competidores del rubro, se
-  analiza qué estructura y elementos de conversión tienen en común, y se destila una
-  plantilla genérica reutilizable
-- Automatizaciones para los clientes más avanzados
+- The agency site, from scratch, in code
+- A **niche template system**: scrape 2-3 competitors in the vertical, analyze what
+  structure and conversion elements they share, and distill a reusable template
+- Automations for the more advanced clients
 
-### Decisiones de diseño
+### Design decisions
 
-**Plantilla por nicho, no plantilla genérica.** Una plantilla que sirve para todo no
-sirve para nada: un negocio de HVAC necesita un bloque de emergencias 24/7 que a una
-empresa de limpieza no le hace falta. Las plantillas se destilan del nicho real, no
-de lo que se supone que un sitio de servicios debe tener.
+**Templates per niche, not one generic template.** A template that fits everything
+fits nothing: an HVAC business needs a 24/7 emergency block that a cleaning company
+has no use for. Templates get distilled from the actual niche, not from what a
+service site is supposed to have.
 
-**El sistema de diseño vive en código.** No uso herramientas de diseño. La escala
-tipográfica, el espaciado y la paleta son tokens en el código, no decisiones que se
-retoman en cada proyecto. Es lo que permite que la web número diez salga más rápido
-que la primera sin verse igual.
+**The design system lives in code.** I don't use design tools. The type scale, the
+spacing and the palette are tokens in the code, not decisions revisited on every
+project. That is what makes the tenth site faster than the first without making it
+look identical.
 
-`[FALTA: screenshot]`
+`[MISSING: screenshot]`
 
 ---
 
 # ⭐ by-evamarquez.com
 
-**Mi sitio personal**, bilingüe, sobre el mismo stack que uso para producto.
+**My personal site**, bilingual, on the same stack I use for product.
 
 `Next.js 15` · `Supabase` · `Tailwind` · `TypeScript` · `Vercel`
-🟢 [En vivo](https://www.by-evamarquez.com/) · 🔒 Repo privado
+🟢 [Live](https://www.by-evamarquez.com/) · 🔒 Private repo
 
-### Qué es
+### What it is
 
-El sitio donde vive mi trabajo público: quién soy, qué construyo y lo que voy
-escribiendo sobre automatización e IA. Está en español e inglés porque mi audiencia
-está partida entre Latinoamérica y Estados Unidos.
+Where my public work lives: who I am, what I build, and what I write about
+automation and AI. It runs in English and Spanish because my audience is split
+between Latin America and the US.
 
-No es una landing de una página. Tiene secciones de contenido, navegación real y
-está montado sobre Next.js con Supabase detrás — el mismo stack con el que construyo
-producto, lo que significa que puede crecer a algo con cuentas y pagos sin rehacerse.
+It is not a one-page landing. It has content sections, real navigation, and runs on
+Next.js with Supabase behind it. The same stack I build product on, which means it
+can grow into something with accounts and payments without being rebuilt.
 
-### Decisiones de diseño
+### Design decisions
 
-**El contenido vive en archivos, no en un CMS.** Escribir una entrada es escribir un
-archivo y hacer commit. Sin panel que mantener, sin base de datos que respaldar, y con
-historial de cada cambio. Un CMS para un sitio de una persona es infraestructura que
-mantienes a cambio de nada.
+**Content lives in files, not a CMS.** Writing a post means writing a file and
+committing it. No panel to maintain, no database to back up, and a full history of
+every change. A CMS for a one-person site is infrastructure you maintain in exchange
+for nothing.
 
-**Server-side rendering.** Un sitio personal que no aparece en búsqueda no cumple su
-función.
+**Server-side rendering.** A personal site that doesn't show up in search isn't doing
+its job.
 
-**El mismo stack que uso para producto.** Podría haberlo hecho en un constructor
-visual en una tarde. Lo hice en Next.js porque el sitio también es evidencia: alguien
-que lo abre y mira el código ve cómo trabajo.
+**The same stack I use for product.** I could have built it in a visual builder in an
+afternoon. I built it in Next.js because the site is also evidence: anyone who opens
+it and looks at the code sees how I work.
 
-`[FALTA: screenshot]`
-
----
-
-# ⭐ De 0 a Remoto — sitio del producto
-
-**La cara pública de mi plataforma de formación en trabajo remoto.**
-
-🟢 [En vivo](https://de-0-a-remoto.vercel.app) · 🔒 Repo privado
-
-### Qué es
-
-De 0 a Remoto es un negocio propio: enseño a conseguir trabajo remoto en tres áreas
-— asistente virtual, marketing digital y project management. Este sitio es la parte de
-captación, separada de la plataforma donde están los estudiantes.
-
-Explica las tres rutas, el método, y lleva a la persona a la ruta que le corresponde.
-El visitante llega sin saber para cuál de las tres sirve, así que el trabajo del sitio
-es orientarlo antes de venderle.
-
-### Decisión de diseño
-
-**Sitio de marketing y plataforma, separados.** El sitio cambia seguido, según lo que
-convierte. La plataforma cambia poco y no puede romperse. Acoplarlos habría hecho que
-cada prueba de copy fuera un despliegue con riesgo sobre las cuentas de estudiantes
-que ya pagaron.
-
-`[FALTA: screenshot]`
+`[MISSING: screenshot]`
 
 ---
 
-# ⭐ Guía y tests de roles remotos
+# ⭐ De 0 a Remoto, product site
 
-**Herramienta de evaluación que te dice para qué rol remoto encajas.**
+**The public face of my remote-work training platform.**
 
-`HTML` · `JavaScript`
-🔒 Repo privado
+🟢 [Live](https://de-0-a-remoto.vercel.app) · 🔒 Private repo
 
-### Qué es
+### What it is
 
-Un test que hace preguntas sobre perfil, experiencia previa y preferencias de trabajo,
-y devuelve **una ruta recomendada** — asistente virtual, marketing digital o project
-management — junto con la guía correspondiente para empezar.
+De 0 a Remoto is a business I own: I teach people how to land remote work in three
+areas. This site is the acquisition side, kept separate from the platform where
+students live.
 
-Funciona como puerta de entrada a De 0 a Remoto: la persona llega con la duda de si
-esto es para ella, sale con una respuesta concreta y un primer paso.
+It explains the three tracks, the method, and moves a visitor toward the right one.
+People arrive not knowing which of the three fits them, so the site's job is to
+orient them before selling to them.
 
-### El problema
+### Design decision
 
-La pregunta que más se repetía entre quienes querían trabajar remoto no era "cómo
-empiezo". Era **"para cuál de estos sirvo"**. Responderla una por una no escala, y
-sin respuesta la gente no arranca.
+**Marketing site and platform, separated.** The site changes often, based on what
+converts. The platform changes rarely and cannot break. Coupling them would have made
+every copy test a risky deploy on top of accounts that already paid.
 
-### Decisiones de diseño
-
-**Sin backend, a propósito.** Toda la lógica de evaluación corre en el navegador.
-Nadie tiene que registrarse para obtener valor, no hay datos personales que custodiar,
-y el costo de operación es cero.
-
-**La captura de contacto va después del resultado.** Primero la persona recibe algo
-útil, después se le pide el correo. Al revés, la mayoría abandona antes de terminar y
-tú te quedas sin el dato y sin haber ayudado a nadie.
-
-`[FALTA: screenshot del test y del resultado]`
+`[MISSING: screenshot]`
 
 ---
 
-## El resto
+# ⭐ Remote role fit test
 
-| Proyecto | Qué es | Stack | Estado |
+**An assessment tool that tells you which remote career track fits you.**
+
+`HTML` · `JavaScript` · serverless functions
+🔒 Private repo
+
+### What it is
+
+A test that asks about background, prior experience and work preferences, and returns
+**a recommended track**: virtual assistant, digital marketing, project management or
+AI. Along with the guide to get started in it.
+
+It works as the front door to De 0 a Remoto: a person arrives wondering whether any
+of this is for them, and leaves with a concrete answer and a first step.
+
+### The problem
+
+The question that came up most from people who wanted to work remotely was never
+"how do I start". It was **"which one of these am I good for"**. Answering it one at a
+time does not scale, and without an answer people don't move at all.
+
+### Design decisions
+
+**No backend, on purpose.** All the assessment logic runs in the browser. Nobody has
+to register to get value, there is no personal data to safeguard, and the operating
+cost is zero.
+
+**Contact capture comes after the result.** The person gets something useful first,
+then gets asked for an email. The other way around, most people abandon before
+finishing and you end up with neither the contact nor a person you helped.
+
+`[MISSING: screenshot of the test and the result]`
+
+---
+
+## Everything else
+
+| Project | What it is | Stack | Status |
 |---|---|---|---|
-| **Bienestar Natural** | Landing de producto para un negocio de bienestar | HTML | 🟢 Repo público |
-| **Sitios de cliente** | Webs para clientes de la agencia, en el nicho de servicios locales | HTML · TypeScript | 🏢 No publicable |
+| **Bienestar Natural** | Product landing page for a wellness business | HTML | 🔒 Private repo |
+| **Client sites** | Websites for agency clients in the local services niche | HTML · TypeScript | 🏢 Not publishable |

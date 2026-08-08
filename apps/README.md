@@ -1,223 +1,216 @@
 # Apps
 
-Productos completos: frontend, backend, base de datos y gente usándolos del otro lado.
+Full products: frontend, backend, database, and real people using them on the other
+side.
 
 ---
 
 # ⭐ De 0 a Remoto
 
-**Plataforma de formación para conseguir trabajo remoto**, con cuentas de estudiante,
-contenido por rutas y pagos.
+**A learning platform for people moving into remote work**, with three tracks:
+virtual assistant, digital marketing and project management.
 
 `Next.js 15` · `Supabase` · `Stripe` · `Tailwind` · `TypeScript`
-🟢 En vivo · 🔒 Repo privado · `[CONFIRMAR: URL]`
+🟢 Live · 🔒 Private repo
 
-### Qué es
+### What it is
 
-De 0 a Remoto es un negocio propio. Enseño a personas sin experiencia previa a
-conseguir su primer trabajo remoto en tres áreas: **asistente virtual, marketing
-digital y project management**. Cada área es una ruta con su propio contenido, sus
-ejercicios y su camino de entrada al mercado.
+De 0 a Remoto is a business I own. I teach people with no prior experience how to
+land their first remote job in three areas. Each area is a track with its own
+content, exercises and path into the market.
 
-La plataforma es donde vive todo eso. Una persona compra el acceso, crea su cuenta, y
-entra a un panel donde ve su ruta, avanza por los módulos y descarga el material.
-Del otro lado hay un panel de administración desde el que gestiono contenido,
-estudiantes y accesos.
+The platform is where all of that lives. Someone buys access, creates an account,
+and lands in a dashboard where they see their track, work through the modules and
+download the material. On the other side there is an admin panel where I manage
+content, students and access.
 
-No es un curso en video colgado en una carpeta. Es una aplicación con autenticación,
-base de datos, control de acceso por compra y contenido servido desde el servidor.
+It is not a course dropped in a folder. It is an application with authentication,
+a database, purchase-gated access and server-rendered content.
 
-### El problema
+### The problem
 
-Enseñar a conseguir trabajo remoto no escala si cada estudiante necesita atención
-individual. Y las plataformas de cursos existentes cobran una comisión por cada venta,
-imponen su diseño y no dejan construir la experiencia que el producto necesita.
+Teaching people to find remote work does not scale if every student needs
+individual attention. And existing course platforms take a cut of every sale,
+impose their design, and don't let you build the experience the product needs.
 
-Hacía falta que el contenido, el acceso y el cobro funcionaran solos, bajo mi control.
+Content, access and payments had to run on their own, under my control.
 
-### Qué construí
+### What I built
 
-- **Cuentas de estudiante** con autenticación, sesión persistente y recuperación de
-  contraseña, sobre Supabase
-- **Contenido estructurado por ruta**, versionado en el repositorio y renderizado en
-  el servidor
-- **Pagos con Stripe** conectados al ciclo de acceso: pagar desbloquea la ruta
-- **Panel de administración** para gestionar contenido, estudiantes y accesos
-- **Migraciones de base de datos versionadas**, no cambios manuales al esquema
+- **Student accounts** with authentication, persistent sessions and password
+  recovery, on Supabase
+- **Content structured by track**, versioned in the repository and server-rendered
+- **Stripe payments** wired into the access lifecycle: paying unlocks the track
+- **Admin panel** to manage content, students and access
+- **Versioned database migrations**, not manual schema edits
 
-### Decisiones de diseño
+### Design decisions
 
-**El contenido vive en el repositorio, no en la base de datos.** Los cursos son
-archivos versionados. Un cambio de contenido es un commit: tiene historial, se puede
-revisar y se puede revertir. La base de datos guarda solo lo que cambia por usuario —
-cuentas, accesos, progreso. Meter contenido en la base de datos habría significado
-construir un editor, mantenerlo, y perder el historial de qué cambió y cuándo.
+**Content lives in the repository, not in the database.** Courses are versioned
+files. A content change is a commit: it has history, it can be reviewed, it can be
+reverted. The database only holds what changes per user, which is accounts, access
+and progress. Putting content in the database would have meant building an editor,
+maintaining it, and losing the record of what changed and when.
 
-**Server-side rendering desde el inicio.** Es una plataforma que necesita ser
-encontrada por gente buscando cómo trabajar remoto. Renderizar en el servidor no fue
-una optimización posterior: fue la razón de elegir el framework.
+**Server-side rendering from day one.** This is a platform that needs to be found by
+people searching for how to work remotely. Rendering on the server was not a later
+optimization, it was the reason for picking the framework.
 
-**Supabase en vez de autenticación propia.** Auth es el tipo de cosa donde construir
-desde cero solo agrega superficie de error. Row Level Security resuelve el aislamiento
-entre usuarios **a nivel de base de datos**, no a nivel de código que se puede olvidar
-en un endpoint.
+**Supabase instead of rolling my own auth.** Auth is the kind of thing where
+building from scratch only adds surface area for mistakes. Row Level Security
+handles isolation between users **at the database level**, not in application code
+you can forget to write on one endpoint.
 
-`[FALTA: screenshots del panel de estudiante y del admin]`
+`[MISSING: screenshots of the student dashboard and admin panel]`
 
 ---
 
-# ⭐ Generador de artículos con IA
+# ⭐ AI article generation system
 
-**Sistema de producción de contenido SEO** para una agencia que atendía 17+ marcas de
-e-commerce.
+**A content production system** for an agency serving 17+ e-commerce brands.
 
-`Python` · `IA generativa` · `Google Workspace APIs`
-🏢 Trabajo de cliente · código no publicado
+`Python` · `Generative AI` · `Google Workspace APIs`
+🏢 Client work · code not published
 
-### Qué es
+### What it is
 
-Una herramienta interna que usaba el equipo de contenido de la agencia. Se le indica
-un **tema y una marca**, y devuelve un artículo en borrador, con su estructura, su
-investigación incorporada y el formato listo — dentro del flujo de trabajo donde el
-equipo ya trabajaba.
+An internal tool used by the agency's content team. You give it a **topic and a
+brand**, and it returns a draft article with its structure, its research folded in
+and the formatting done, inside the workflow the team already worked in.
 
-Cada marca cliente tiene su propio perfil: tono, vocabulario, temas que sí y temas que
-no. El sistema lee ese perfil antes de escribir, así que el artículo para una marca de
-colchones no sale con la voz de una marca de suplementos.
+Every client brand has its own profile: tone, vocabulary, topics that are in and
+topics that are out. The system reads that profile before writing, so an article
+for a mattress brand does not come out sounding like a supplements brand.
 
-Lo usaban el content lead y el equipo editorial. Yo construí y mantuve el sistema; el
-juicio editorial siempre se quedó con ellos.
+The content lead and the editorial team used it. I built and maintained the system;
+editorial judgment always stayed with them.
 
-### El problema
+### The problem
 
-Producir un artículo tomaba **cerca de dos días**: investigación, esquema, borrador,
-revisión interna, formato. Con 17 marcas que atender, el cuello de botella era el
-volumen, y no se resolvía contratando más gente — se resolvía cambiando el proceso.
+Producing one article took **about two days**: research, outline, draft, internal
+review, formatting. With 17 brands to serve, throughput was the bottleneck, and it
+was not going to be solved by hiring. It had to be solved by changing the process.
 
-### Resultado
+### Result
 
-- **200+ artículos** producidos
-- De **~2 días por artículo** a **minutos, más el tiempo de revisión del editor**
+- **200+ articles** produced
+- From **~2 days per article** to **minutes plus editor review**
 
-### Decisiones de diseño
+### Design decisions
 
-**El editor no sale del circuito.** El sistema no publica: entrega un borrador. Sacar
-al humano de un pipeline de contenido es como se termina publicando algo vergonzoso a
-escala, y una marca de e-commerce de 7-9 cifras no puede permitirse eso. La ganancia
-nunca estuvo en eliminar la revisión — estuvo en eliminar todo lo que venía antes.
+**The editor never leaves the loop.** The system does not publish, it produces a
+draft. Taking the human out of a content pipeline is how you end up shipping
+something embarrassing at scale, and a 7-9 figure e-commerce brand cannot afford
+that. The gain was never in removing review. It was in removing everything that
+came before it.
 
-**Una marca, un perfil en configuración.** El tono y las restricciones de cada cliente
-viven en un archivo de configuración, no dentro del prompt. Agregar una marca nueva es
-agregar un archivo. Si el tono estuviera en el prompt, cada cliente nuevo sería una
-reescritura del sistema.
+**One brand, one config file.** Each client's tone and constraints live in
+configuration, not inside the prompt. Adding a new brand means adding a file. If the
+tone lived in the prompt, every new client would be a rewrite of the system.
 
-### Arquitectura
+### Architecture
 
 ```
-tema + marca
+topic + brand
      ↓
-[perfil de marca]  →  investigación  →  estructura
-                                            ↓
-                                        redacción
-                                            ↓
-                                     formato + entrega
-                                            ↓
-                              borrador → editor humano → publicación
+[brand profile]  →  research  →  outline
+                                    ↓
+                                  drafting
+                                    ↓
+                            formatting + delivery
+                                    ↓
+                        draft → human editor → publication
 ```
 
 ---
 
-# ⭐ CRM interno
+# ⭐ Internal CRM
 
-**Reemplazo del Airtable en el que corría un equipo de 12 personas.**
+**Replaced the Airtable a 12-person team was running on.**
 
-`TypeScript` · `Lovable` · base de datos propia
-🏢 Trabajo de cliente · código no publicado · 🟢 en uso diario hoy
+`TypeScript` · `Lovable` · custom database
+🏢 Client work · code not published · 🟢 in daily use today
 
-### Qué es
+### What it is
 
-El sistema donde la agencia lleva su operación: clientes, proyectos, estado de cada
-entrega y quién es responsable de qué. Un dashboard interno construido sobre el flujo
-real del equipo, con las vistas que cada rol necesita.
+The system where the agency runs its operation: clients, projects, the state of every
+deliverable and who owns what. An internal dashboard built around the team's real
+workflow, with the views each role needs.
 
-Lo usan las 12 personas del equipo todos los días. Reemplazó por completo la base de
-Airtable que venían usando desde antes.
+All 12 people on the team use it every day. It fully replaced the Airtable base they
+had been working in.
 
-### El problema
+### The problem
 
-El equipo operaba sobre Airtable. Funcionó hasta que dejó de hacerlo: el esquema había
-crecido más allá de lo que una herramienta con forma de hoja de cálculo maneja bien, y
-los flujos que el equipo realmente necesitaba se estaban **simulando** — con campos de
-estado que en realidad eran pasos de un proceso, con vistas filtradas que en realidad
-eran pantallas distintas.
+The team ran on Airtable. It worked until it didn't: the schema had grown past what a
+spreadsheet-shaped tool handles well, and the workflows the team actually needed were
+being **simulated** rather than supported. Status fields that were really process
+steps. Filtered views that were really separate screens.
 
-Cuando estás usando una herramienta contra su diseño, cada mejora cuesta más que la
-anterior.
+Once you are using a tool against its design, every improvement costs more than the
+last one.
 
-### Qué construí
+### What I built
 
-Lideré la migración completa: definición del esquema real, construcción del CRM y el
-dashboard, traslado de datos y acompañamiento del equipo durante el cambio.
+I led the full migration: defining the real schema, building the CRM and dashboard,
+moving the data, and walking the team through the change.
 
-### Resultado
+### Result
 
-En uso diario por las 12 personas. **Sigue corriendo después de que terminó mi
-contrato**, que es la única prueba real de que una herramienta interna estaba bien
-hecha.
+In daily use by all 12 people. **Still running after my contract ended**, which is
+the only real proof that an internal tool was built right.
 
-### Lo que aprendí
+### What I learned
 
-**Lo difícil de una migración nunca son los datos.** Son las suposiciones que la
-herramienta vieja tenía codificadas y que nadie escribió en ningún lado. Las descubres
-cuando algo se rompe para la persona que dependía de eso.
+**The hard part of a migration is never the data.** It is the assumptions the old
+tool had encoded that nobody ever wrote down. You find them when something breaks for
+the person who depended on it.
 
-Por eso la migración no fue un evento de un día: fue un periodo de convivencia de los
-dos sistemas, con el equipo usando el nuevo y reportando lo que faltaba.
+That is why the migration was not a single event. It ran as a period where both
+systems coexisted, with the team using the new one and reporting what was missing.
 
 ---
 
-# ⭐ Scheduler multiplataforma
+# ⭐ Multi-platform scheduler
 
-**Programa y publica contenido en 9+ plataformas todos los días.**
+**Programs and publishes content across 9+ platforms, every day.**
 
 `TypeScript`
-🏢 Trabajo de cliente · código no publicado
+🏢 Client work · code not published
 
-### Qué es
+### What it is
 
-Una herramienta interna donde el equipo carga el contenido de la semana y el sistema
-se encarga de publicarlo: **9+ plataformas, 3 posts en cada una, todos los días**.
+An internal tool where the team loads the week's content and the system handles
+publishing: **9+ platforms, 3 posts each, daily**.
 
-Tiene la cola de publicación, el calendario de lo que va a salir y el registro de lo
-que ya salió. Para cinco de las nueve plataformas la publicación es automática de
-punta a punta. Para las otras cuatro, el sistema prepara el contenido y avisa, pero
-alguien lo publica a mano.
+It holds the publishing queue, the calendar of what is going out and the log of what
+already went. For five of the nine platforms publishing is fully automated. For the
+other four, the system prepares the content and flags it, and a person posts it.
 
-### El problema
+### The problem
 
-Publicar en nueve plataformas, tres posts cada una, todos los días, a mano. Repetitivo,
-y del tipo de tarea donde un día saltado es invisible hasta que se acumula y alguien
-nota que un canal lleva dos semanas muerto.
+Publishing across nine platforms, three posts each, every day, by hand. Repetitive,
+and the kind of task where a skipped day is invisible until it compounds and someone
+notices a channel has been dead for two weeks.
 
-### Resultado
+### Result
 
-**9+ plataformas al día × 3 posts**, con el conjunto automatizado corriendo sin
-supervisión.
+**9+ platforms × 3 posts daily**, with the automated set running unattended.
 
-### El límite, dicho en voz alta
+### The limit, stated out loud
 
-**Cuatro de las nueve se quedaron manuales** porque sus APIs no soportaban publicación
-programada de terceros. No es un pendiente: es el límite del sistema y está
-documentado como tal, con qué haría falta para levantarlo.
+**Four of the nine stayed manual** because their APIs did not support third-party
+scheduled publishing. That is not a backlog item, it is the boundary of the system,
+and it is documented as such along with what it would take to lift it.
 
-Un sistema que declara dónde no llega es más confiable que uno que promete cobertura
-total y falla en silencio.
+A system that declares where it stops is more trustworthy than one that promises full
+coverage and fails silently.
 
 ---
 
-## El resto
+## Everything else
 
-| Proyecto | Qué es | Stack | Código |
+| Project | What it is | Stack | Code |
 |---|---|---|---|
-| **Prototipo de CRM** | Primera versión del CRM interno, antes de la migración definitiva | TypeScript | 🏢 Cliente |
-| **Web app de SEO** | Herramienta interna para análisis y seguimiento de posiciones | TypeScript | 🏢 Cliente |
+| **CRM prototype** | First version of the internal CRM, before the full migration | TypeScript | 🏢 Client |
+| **SEO web app** | Internal tool for analysis and rank tracking | TypeScript | 🏢 Client |
