@@ -2,10 +2,10 @@
 
 **AI Solutions Engineer · Automatizaciones, agentes y herramientas internas**
 
-Construyo los sistemas que hacen desaparecer el trabajo manual. El último año entregué
-80+ automatizaciones a producción: apps que reemplazaron las hojas de cálculo en las
-que corría un equipo entero, agentes que generan contenido, y schedulers que publican
-en nueve plataformas al día.
+Construyo los sistemas que hacen desaparecer el trabajo manual. En mi último contrato
+entregué 80+ automatizaciones a producción: apps que reemplazaron las hojas de cálculo
+en las que corría un equipo entero, agentes que generan contenido, y schedulers que
+publican en nueve plataformas al día.
 
 No llegué a esto desde la ingeniería. Llegué desde dirigir cosas — fundé y escalé un
 e-commerce, coordiné 120+ proyectos de agencia y llevé procura internacional. Por eso
