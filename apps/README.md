@@ -12,7 +12,7 @@ or live integration context. Where useful, I publish sanitized showcases instead
 dashboard.**
 
 `TypeScript` · `Lovable` · custom database · migration planning
-🏢 Client work · case study only · production system private · in daily use
+🏢 Client work · [public case study](https://github.com/evamarquez/internal-crm-case-study) · production system private · in daily use
 
 ### What it is
 
@@ -48,11 +48,13 @@ The CRM is still used daily by the full 12-person team. That is the real test: n
 whether a tool can be built, but whether the team keeps using it when the builder is
 no longer in the room.
 
-### Public version plan
+### Public case study
 
-A public showcase should not expose the production CRM. The safe version will include
-a fake schema, mock records, sanitized screenshots or wireframes, a migration decision
-log sample, and selected implementation patterns.
+The public case study shows the migration thinking, representative architecture,
+mock data model, privacy boundary and rollout approach without exposing client data or
+production code.
+
+→ [See the CRM case study](https://github.com/evamarquez/internal-crm-case-study)
 
 ---
 
