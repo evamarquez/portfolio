@@ -1,159 +1,169 @@
 # Agents
 
-Systems where a model makes decisions inside a structure I designed.
-
-The interesting part is never that an agent writes something. It is what you let it
-decide and what you take out of its hands.
-
----
-
-# ⭐ Newsletter Kit
-
-**Say "I need a newsletter about X"** and the system researches the topic, writes the
-issue, draws the data charts, generates the editorial illustration, renders email-safe
-HTML and leaves a draft ready to send. It can also run itself on a schedule.
-
-`Python` · `Jinja` · `Playwright` · `premailer` · `GitHub Actions` · `Cloudflare R2`
-🟢 **[Public code](https://github.com/evamarquez/newsletter-kit)** · MIT
-
-### The architecture
-
-Built on the **WAT** pattern (Workflows, Agents, Tools): markdown SOPs describe the
-work, the agent orchestrates, Python scripts execute. Probabilistic reasoning stays
-where it helps; everything repeatable is deterministic code.
-
-```
-topic ─→ research_topic.py ──→ [issue.json] ──┬─→ make_infographic.py ──┐
-         (5 parallel angles)   (schema-        │   (Playwright → PNG)    │
-                                validated)     └─→ generate_image.py ────┤
-                                                                         ↓
-   log_issue.py ←── send_gmail.py ──────────────────── render_newsletter.py
-   (archive)        (SMTP + inline CID images)          (Jinja + premailer)
-```
-
-### The two rules the design rests on
-
-**The agent never writes HTML.** It produces a schema-validated `issue.json`, and
-fixed Jinja templates render it. Email HTML is not web HTML: Outlook renders through
-the Word engine, Gmail strips most of `<head>`, flexbox and grid are unusable.
-Hand-generated markup breaks differently every issue. This split is why issue #1 and
-issue #40 look identical, and why a visual bug is a one-file fix instead of a
-re-prompt.
-
-**Numbers never go inside a generated image.** A generative model cannot guarantee
-that a bar drawn for 47% is proportionally 47%, and it can alter a digit invisibly.
-Two separate lanes: one model draws concepts, a script draws data from the actual
-values. The schema enforces it by rejecting digits in image prompts.
-
-### Guardrails
-
-Sending is the one irreversible action in the system, so it is guarded in layers:
-brand-level send restriction, a scheduled workflow with no send flag anywhere, one
-message per recipient rather than exposing the list, and a broken image reference
-treated as a fatal error rather than a warning. A sent campaign cannot be recalled.
-
-### Documented learnings
-
-The README includes a section on what went wrong: Jinja autoescaping silently breaking
-a CSS font stack, `strftime` using the machine's locale instead of the content's, CI
-artifacts reporting success while uploading nothing. They are there because that is
-the part that saves time for whoever builds something similar.
-
-→ **[See the full repository](https://github.com/evamarquez/newsletter-kit)**
+Systems where a model makes decisions inside a structure I designed. The important
+question is not whether a model is involved; it is what the system lets the model
+decide, what deterministic code handles, and where a human stays in control.
 
 ---
 
-# ⭐ Executive Assistant
+# Reporting Agent
 
-**A personal executive assistant built as a multi-agent system**, not a chat window
-with a long prompt.
+**Removed a recurring manual reporting process end to end.**
 
-`Claude Code` · `Model Context Protocol` · `Firecrawl` · `Git`
-🔒 Private repo, contains personal business context
+`Python` · deterministic data processing · report assembly
+🏢 Client work · public showcase planned · production system private
 
-### The problem with chat
+### What it is
 
-A chat assistant forgets. Every conversation starts from zero, so you re-explain your
-business, your priorities and your preferences before you can ask for anything. It
-gets you 50% of the way there instead of 90%, and the gap is entirely context you
-already provided last week.
+A recurring report used to be assembled manually: pull the data, organize it, format
+it and deliver it. I built an agentic workflow that removed the repeatable work from
+the process.
 
-### The architecture
-
-```
-CLAUDE.md          pointers, not content. Loaded on every message
-context/           who I am, the business, priorities, goals
-.claude/
-  rules/           one file per topic: tone, public voice, decision criteria
-  skills/          invokable procedures with YAML front matter
-  agents/          sub-agents with their own context and model
-projects/          one folder per active workstream, outputs live there
-decisions/log.md   append-only: what was decided and why
-```
-
-### Three design decisions
-
-**The brain holds pointers, not content.** `CLAUDE.md` loads in full on every message,
-so putting business context in it would burn the window before the first question.
-Instead it says *"if you need to know about priorities, read this file."* Context loads
-on demand. The file stays under 150 lines and the system still knows everything.
-
-**Skills and sub-agents are different tools.** A skill runs in the current context with
-the current model: it is a procedure you want followed. A sub-agent gets a fresh
-context window and can run a different, cheaper model: it is for work that produces a
-lot of intermediate output nobody needs to see. Research that sweeps twenty sources
-goes to a sub-agent; the main conversation gets the report, not the process.
-
-**Decisions are append-only.** Entries are never edited. When something changes, a new
-one reverts it and explains why. Six months later the reasoning is the valuable part:
-*"we tried this and it did not work because X"* is expensive information to lose.
-
-### Why it improves with use
-
-Every report, draft and decision is written to a file inside the project. Clear the
-conversation and the assistant picks up by reading them. The system compounds instead
-of resetting.
-
----
-
-# ⭐ Reporting agent
-
-**Removed a recurring manual process end to end** at an SEO agency.
-
-🏢 Client work · code not published
-
-### The problem
-
-A recurring report assembled by hand: pull the data, order it, format it, deliver it.
-The kind of task that eats a predictable slice of every week and leaves nothing anyone
-remembers doing.
-
-### What I built
-
-An agent that pulls the data from the sources, assembles the report and delivers it.
+The system pulls the required inputs, structures the report and delivers the output in
+the format the team needs. It is designed around repeatability and auditability, not
+around asking a model to improvise an explanation.
 
 ### Result
 
-The manual process disappeared end to end. It was not reduced, it was removed.
+The manual process disappeared end to end. Not reduced. Removed.
 
 ### Design decision
 
-**The agent presents the numbers, it does not interpret them.** Asking a model to draw
-conclusions from performance data is asking it to invent a narrative. It extracts,
-calculates and formats deterministically; the analysis is done by whoever knows the
+**The agent presents the numbers; it does not interpret them.** Asking a model to draw
+performance conclusions can turn reporting into storytelling. This system extracts,
+calculates and formats deterministically; analysis stays with the person who knows the
 client.
+
+### Public version plan
+
+The public showcase can use fake CSVs, mock KPIs and a generated report example. The
+production version stays private because it contains client context, source mappings
+and internal reporting logic.
 
 ---
 
-## Everything else
+# Executive Assistant
 
-Claude Code skills built during a 7-day AI systems challenge:
+**A personal executive assistant built as a multi-agent operating system, not a chat
+window with a long prompt.**
 
-| Skill | What it does |
-|---|---|
-| **Excalidraw diagrams** | Generates editable diagrams from a description |
-| **Controlled image generation** | Parameterized JSON prompts for hyper-realistic images, avoiding the plastic AI look |
-| **Frontend design** | Interfaces with real design judgment, avoiding generic output |
-| **Video to website** | Turns a video into an animated scroll-driven site |
+`Model Context Protocol` · `Git` · skills · sub-agents · persistent context
+Private repo · showcase planned with personal context removed
 
-Each one with YAML front matter defining **when** to invoke it, not just what it does.
+### The problem with chat
+
+A chat assistant forgets. Every conversation starts from zero, so you re-explain the
+business, priorities and preferences before asking for anything useful.
+
+The goal was to make the assistant compound over time: files hold context, projects
+hold outputs, and decisions are logged so future work starts from what was already
+learned.
+
+### Architecture
+
+```text
+root instructions     pointers, not all context
+context/              business, priorities, preferences, goals
+rules/                one file per topic: tone, decision criteria, public voice
+skills/               invokable procedures with clear trigger rules
+agents/               sub-agents with focused context windows
+projects/             active workstreams and outputs
+decisions/log.md      append-only record of decisions and reversals
+```
+
+### Design decisions
+
+**The main instruction file holds pointers, not content.** The assistant loads only
+what it needs, when it needs it. That keeps the starting context small without making
+the system ignorant.
+
+**Skills and sub-agents solve different problems.** A skill is a procedure to follow
+inside the current context. A sub-agent is useful when the task produces lots of
+intermediate work that should not pollute the main conversation.
+
+**Decisions are append-only.** When something changes, a new entry explains why. The
+reasoning is often more valuable than the final answer.
+
+### Public version plan
+
+The public version should show the structure, not the private brain. It can include a
+fake context pack, example skills, sample decision logs and a mock project folder.
+Personal business context, private goals, client names and live integrations should be
+removed.
+
+---
+
+# SC Lead Finder
+
+**An unattended prospecting workflow that finds local businesses and ranks which offer
+fits each one.**
+
+`TypeScript` · `Trigger.dev` · scheduled workflows
+Private repo · public showcase planned
+
+### What it is
+
+Every Monday, the workflow evaluates local businesses, checks the state of their web
+presence and returns a prioritized list of opportunities.
+
+The valuable part is the scoring. It does not only ask, “does this business need a
+website?” It asks which product makes the most sense to approach with first.
+
+### Design decisions
+
+**An unordered list is not an outcome.** Sales does not need more raw names. It needs a
+starting point and a reason.
+
+**Unattended means no mid-run approval.** A scheduled automation that waits for a
+person every week has only moved the work.
+
+### Public version plan
+
+The showcase can include fake businesses, a transparent scoring model, sample output
+and the scheduled-job structure. It should not include real prospect lists or outreach
+strategy.
+
+---
+
+# Newsletter Kit
+
+**Say “I need a newsletter about X” and the system researches, writes, renders charts,
+generates an illustration and leaves a draft ready to send.**
+
+`Python` · `Jinja` · `Playwright` · `premailer` · `GitHub Actions` · `Cloudflare R2`
+[Public code](https://github.com/evamarquez/newsletter-kit) · MIT
+
+### Architecture
+
+Built on the WAT pattern: workflows describe the work, the agent orchestrates, and
+Python scripts execute deterministic steps.
+
+```text
+topic -> research -> schema-validated issue.json -> charts + illustration
+      -> email-safe HTML -> draft delivery -> archive
+```
+
+### Design decisions
+
+**The agent never writes HTML.** It produces structured data. Fixed templates render
+email-safe markup, which keeps every issue consistent and makes visual bugs one-file
+fixes.
+
+**Numbers never go inside generated images.** A script draws charts from actual values.
+Generated art stays conceptual.
+
+**Sending has guardrails.** Scheduled runs create drafts, not live campaigns, and send
+paths are restricted to avoid irreversible mistakes.
+
+→ [See the full repository](https://github.com/evamarquez/newsletter-kit)
+
+---
+
+## Other Agent Work
+
+| Project | What it shows | Public status |
+|---|---|---|
+| **Skills library** | Reusable procedures with trigger rules and structured instructions | Selected examples can be public |
+| **Controlled image generation workflow** | Parameterized prompts and quality constraints | Case study possible |
+| **Frontend design workflow** | Design critique and implementation guidance for generated UIs | Case study possible |
+| **Video-to-website workflow** | Turns source media into an animated scroll-driven site | Case study possible |
