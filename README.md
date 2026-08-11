@@ -112,7 +112,8 @@ For private client or business systems, I publish one of three things:
 | **Case study only** | Architecture, rollout and decisions are visible; production code stays private |
 
 This protects client data, credentials, internal workflows and business context while
-still showing enough technical substance to evaluate the work.
+still showing enough technical substance to evaluate the work. Future showcase repos
+follow this [public showcase template](SHOWCASE_TEMPLATE.md).
 
 ---
 
