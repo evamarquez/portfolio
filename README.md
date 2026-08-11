@@ -36,7 +36,7 @@ sanitized so they can be evaluated without exposing confidential information.
 
 | Project | What it proves | Public status |
 |---|---|---|
-| **Internal CRM Migration** | Technical project management, schema redesign, migration planning, rollout, adoption by a 12-person team | Case study only · production system private |
+| **Internal CRM Migration** | Technical project management, schema redesign, migration planning, rollout, adoption by a 12-person team | [Public case study](https://github.com/evamarquez/internal-crm-case-study) · production system private |
 | **AI Article Generation Pipeline** | Multi-stage AI automation, provider orchestration, editor-in-the-loop design, measurable throughput gain | Public showcase planned |
 | **Reporting Agent** | Agent applied to operations: pulls data, assembles reports, removes a recurring manual process | Public showcase planned |
 | **De 0 a Remoto** | Full product build: accounts, payments, gated content, admin workflows | Demo/showcase planned · production repo private |
