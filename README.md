@@ -1,16 +1,13 @@
 # Eva Marquez
 
-**IT Project Manager · AI Solutions Engineering**
+**Technical Project Manager · AI Solutions Engineering · Internal Tools**
 
-I run projects end to end, and I build the systems that deliver them.
+I turn real operations into systems: first automations, then agents, then internal
+software that teams actually use.
 
-Most project managers coordinate the people who build. Most engineers build without
-seeing the business. I do both, which is why the systems I ship get adopted instead
-of abandoned.
-
-The work here follows one ladder: **understand a process, turn it into an automation,
-make it self-healing as an agent, then put several of those together and build the
-tool that does the whole thing at once.**
+My strongest work sits at the intersection of delivery and building. I can map a
+messy process with the people who run it, design the workflow, build the technical
+system, and manage the rollout until it is adopted instead of abandoned.
 
 📍 South Carolina, US · Remote · Authorized to work in the US without sponsorship
 🌐 [by-evamarquez.com](https://www.by-evamarquez.com/) ·
@@ -19,79 +16,103 @@ tool that does the whole thing at once.**
 
 ---
 
-## The numbers
+## The proof
 
 | | |
 |---|---|
 | **120+** | projects coordinated at 100% on-time delivery |
 | **80+** | automations shipped into production |
-| **200+** | articles from a pipeline I built, production from 2 days to minutes |
+| **200+** | articles produced through an AI pipeline I built |
 | **12** | people using the internal CRM I built, every day |
 | **~200** | collection and category pages optimized |
 
 ---
 
-## 📱 [Apps](apps/)
+## Core Case Studies
 
-Full products: frontend, backend, database, and real people on the other side.
+These are the projects I use to explain how I work. Production systems that contain
+client, business or personal context stay private; public versions are intentionally
+sanitized so they can be evaluated without exposing confidential information.
 
-| | |
-|---|---|
-| **De 0 a Remoto** | Learning platform with student accounts, course content and payments. Next.js · Supabase · Stripe |
-| **AI article generator** | 200+ articles. Production time from ~2 days per article to minutes |
-| **Internal CRM** | Replaced a 12-person team's Airtable. Still in daily use |
-| **Multi-platform scheduler** | 9+ platforms daily, 3 posts each |
-
-→ [See the apps](apps/)
-
-## 🌐 [Websites](websites/)
-
-| | |
-|---|---|
-| **Eras Conversion** | Agency site for Meta advertising, local service businesses. I lead the web service |
-| **by-evamarquez.com** | Personal site. Next.js · Supabase · Tailwind |
-| **De 0 a Remoto** | Product site |
-| **Role fit test** | Assessment tool that routes people to the right remote career track |
-
-→ [See the websites](websites/)
-
-## ⚙️ [Automations](automations/)
-
-| | |
-|---|---|
-| **Full client lifecycle** | Onboarding and offboarding orchestrated across Slack, Drive, Airtable and Fillout |
-| **AI blog pipeline** | Multi-stage, async callbacks, three AI providers, Reddit mining for real customer language |
-| **SC Lead Finder** | Runs unattended every Monday, finds local businesses and scores which product fits |
-| **Payment reconciliation** | Real-time listener plus bulk backfill, two strategies for one data problem |
-
-**40 automations documented** with exportable blueprints and migration notes.
-
-→ [See the automations](automations/)
-
-## 🤖 [Agents](agents/)
-
-| | |
-|---|---|
-| **Newsletter Kit** 🟢 | Researches, writes, charts and delivers a newsletter. Public code |
-| **Executive Assistant** | Multi-agent system with persistent context, skills and sub-agents |
-| **Reporting agent** | Removed a recurring manual process end to end |
-
-→ [See the agents](agents/)
+| Project | What it proves | Public status |
+|---|---|---|
+| **Internal CRM Migration** | Technical project management, schema redesign, migration planning, rollout, adoption by a 12-person team | Case study only · production system private |
+| **AI Article Generation Pipeline** | Multi-stage AI automation, provider orchestration, editor-in-the-loop design, measurable throughput gain | Public showcase planned |
+| **Reporting Agent** | Agent applied to operations: pulls data, assembles reports, removes a recurring manual process | Public showcase planned |
+| **De 0 a Remoto** | Full product build: accounts, payments, gated content, admin workflows | Demo/showcase planned · production repo private |
+| **SC Lead Finder** | Unattended prospecting workflow with scoring and business prioritization | Public showcase planned |
+| **Newsletter Kit** | Public agentic workflow with research, rendering, guardrails and delivery | [Public code](https://github.com/evamarquez/newsletter-kit) |
 
 ---
 
-## Delivery, not just building
+## Work by System Type
 
-The part that usually goes missing from a technical portfolio. All of this is real:
+### Internal Software
 
-- **Phased migration** from Airtable to a custom CRM, with a decision log, a
-  known-issues register, a kickoff checklist and sub-processor documentation
-- **The SOPs** the team uses to operate and extend these systems, which is why they
-  kept running after my contract ended
-- **120+ projects at 100% on-time delivery**, teams led, operations rebuilt from
-  scratch across agencies and e-commerce
-- **Stakeholder management** reporting to a founder and a Head of Operations inside
-  a 12-person team
+Full tools with users, data models, workflow states and rollout concerns.
+
+- **Internal CRM Migration** — replaced the Airtable a 12-person team was running on.
+- **De 0 a Remoto** — learning platform with student accounts, purchase-gated access
+  and an admin panel.
+- **Multi-platform Scheduler** — manages publishing across 9+ platforms daily.
+
+→ [See internal software and apps](apps/)
+
+### AI & Automation Pipelines
+
+Systems that remove repeated operational work and keep human judgment where it
+belongs.
+
+- **AI Article Generation Pipeline** — took article production from about two days to
+  minutes plus editor review.
+- **Full Client Lifecycle Automation** — onboarding and offboarding across Slack,
+  Drive, Airtable and Fillout.
+- **Payment Reconciliation** — bulk backfill plus real-time listener for Stripe and
+  Airtable records.
+
+→ [See automations](automations/)
+
+### Agents
+
+Model-driven systems with boundaries: what the agent decides, what code handles
+deterministically, and where a human remains in control.
+
+- **Reporting Agent** — removed a recurring manual reporting process end to end.
+- **Executive Assistant** — personal multi-agent system with persistent context,
+  scoped skills and append-only decision logs.
+- **SC Lead Finder** — runs unattended every Monday and ranks local businesses by
+  opportunity.
+- **Newsletter Kit** — public code for a newsletter agent with rendering and send
+  guardrails.
+
+→ [See agents](agents/)
+
+### Websites & Delivery
+
+Sites and delivery systems that support the same operating model: ship faster without
+making every project custom from zero.
+
+- **Eras Conversion** — agency site and service system for local-service businesses.
+- **by-evamarquez.com** — personal site built on the same product stack I use for apps.
+- **Role Fit Test** — assessment tool that routes people to the right remote career
+  track.
+
+→ [See websites](websites/)
+
+---
+
+## How to evaluate the private work
+
+For private client or business systems, I publish one of three things:
+
+| Label | Meaning |
+|---|---|
+| **Public code** | Full public repository, safe to inspect and run |
+| **Public showcase** | Sanitized version with mock data, selected code, architecture and setup notes |
+| **Case study only** | Architecture, rollout and decisions are visible; production code stays private |
+
+This protects client data, credentials, internal workflows and business context while
+still showing enough technical substance to evaluate the work.
 
 ---
 
@@ -99,8 +120,8 @@ The part that usually goes missing from a technical portfolio. All of this is re
 
 | | |
 |---|---|
-| **Project delivery** | Agile · Kanban · RACI · SOP design · stakeholder management · risk matrices · migration planning · cross-functional coordination |
-| **AI & agents** | RAG · multi-agent systems · LangChain · LangGraph · Model Context Protocol · prompt engineering · vector databases (Chroma, FAISS) · Claude Code |
+| **Project delivery** | Agile · Scrum · Kanban · RACI · SOP design · stakeholder management · risk matrices · migration planning · cross-functional coordination |
+| **AI & agents** | RAG · multi-agent systems · LangChain · LangGraph · Model Context Protocol · prompt engineering · vector databases · OpenAI API |
 | **Automation** | Make · Trigger.dev · scheduled workflows · API integration · webhooks · GitHub Actions |
 | **Engineering** | Python · TypeScript · JavaScript · Next.js · Supabase · Airtable · Vercel · Netlify · Stripe |
 | **Analytics** | Google Search Console · Google Analytics 4 · Ahrefs · Semrush |
@@ -119,10 +140,8 @@ English (C1) · Spanish (native) · French (B1)
 
 ## Currently
 
-Open to remote roles in the US: **IT Project Manager**, **Technical Project Manager**,
-**AI Project Manager**, **AI Solutions Engineer**, **Implementation Manager**.
+Open to remote roles in the US: **Technical Project Manager**, **IT Project Manager**,
+**AI Project Manager**, **AI Solutions Engineer**, and **Implementation Manager**.
 
-The fit I want is a service business or a software company that needs someone who can
-sit with a process, understand where it breaks, and then build the thing that fixes it.
-
-Not one half or the other.
+The best fit is a service business or software company that needs someone who can sit
+with a process, understand where it breaks, and build the system that fixes it.
