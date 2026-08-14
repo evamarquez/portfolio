@@ -6,15 +6,13 @@ I turn real operations into systems: first automations, then agents, then intern
 
 ## Start here
 
-These are the projects I want a recruiter or collaborator to open first.
+These are the three case studies I want a recruiter or collaborator to open first.
 
-| Project | Open | What it proves |
-|---|---|---|
-| Internal CRM Migration | [Public case study](https://github.com/evamarquez/internal-crm-case-study) | Migration planning, system design, rollout, and adoption by a 12-person team |
-| AI Content Pipeline | [Public case study](https://github.com/evamarquez/ai-content-pipeline-case-study) | AI orchestration, reliability, editor-in-the-loop design, and measurable output |
-| Automation Migration | [Public case study](https://github.com/evamarquez/automation-migration-case-study) | Technical project management, dependency mapping, and migration judgment |
-| Content Syndication Programme | [Public case study](https://github.com/evamarquez/content-syndication-case-study) | Building from zero, measurement, and correcting unreliable metrics |
-| Newsletter Kit | [Public repository](https://github.com/evamarquez/newsletter-kit) | A real agentic workflow with research, rendering, and delivery guardrails |
+| Order | Project | Open | What it proves |
+|---|---|---|---|
+| 1 | AI Content Pipeline | [Public case study](https://github.com/evamarquez/ai-content-pipeline-case-study) | AI orchestration, reliability, editor-in-the-loop design, and measurable output |
+| 2 | Content Syndication Programme | [Public case study](https://github.com/evamarquez/content-syndication-case-study) | Building from zero, measurement, and correcting unreliable metrics |
+| 3 | Internal CRM Migration | [Public case study](https://github.com/evamarquez/internal-crm-case-study) | Migration planning, system design, rollout, and adoption by a 12-person team |
 
 ## Selected proof
 
@@ -26,15 +24,29 @@ These are the projects I want a recruiter or collaborator to open first.
 | Internal CRM | 12 daily users |
 | Pages optimized | About 200 collection and category pages |
 
+## Automations
+
+[Open the automations portfolio](automations/)
+
+Operational systems that remove repeated work while keeping judgment with the people who understand the business. This page identifies the public case study, private production work, and educational version for each automation.
+
+## Agents
+
+[Open the agents portfolio](agents/)
+
+AI systems with clear boundaries: what the model decides, what deterministic code handles, and where a human remains in control. This page identifies public code, private systems, and community resources.
+
 ## Own products and websites
 
-These are Eva's own products or live sites. Their production source stays private, but the public result is available to inspect.
+These are Eva's own products and websites. Their production source stays private, but the public result is available to inspect.
 
-| Project | Public link | Source status |
+| Project | What it is | Public link |
 |---|---|---|
-| De 0 a Remoto | [Live product](https://de-0-a-remoto.vercel.app) | Production repository private |
-| by-evamarquez.com | [Live website](https://www.by-evamarquez.com/) | Production repository private |
-| Eras Conversion | [Live website](https://eraconversions.com) | Production repository private |
+| De 0 a Remoto | Learning platform for remote work with student accounts, gated course content, and admin workflows. | [Live product](https://de-0-a-remoto.vercel.app) |
+| by-evamarquez.com | Bilingual personal website and content platform for Eva's work in automation, AI, and operations. | [Live website](https://www.by-evamarquez.com/) |
+| Eras Conversion | Agency website and repeatable delivery system for local-service businesses. | [Live website](https://eraconversions.com) |
+
+Production repositories for these projects remain private.
 
 ## Free community resources
 
@@ -46,16 +58,8 @@ These are educational versions of the methods behind some of my systems. They us
   - [Newsletter SOP](https://github.com/evamarquez/community-resources/tree/main/newsletter)
   - [Lead Finder SOP](https://github.com/evamarquez/community-resources/tree/main/lead-finder)
   - [Website Builder SOP](https://github.com/evamarquez/community-resources/tree/main/website-builder)
+- [Newsletter Kit](https://github.com/evamarquez/newsletter-kit) - public community code for a newsletter workflow.
 - [Executive Assistant Portfolio guide](https://github.com/evamarquez/executive-assistant-portfolio)
-
-## Explore by system type
-
-The pages below contain longer explanations and identify whether each project has public code, a case study, a live result, or a private source.
-
-- [Internal software and apps](apps/)
-- [AI and automation pipelines](automations/)
-- [Agents](agents/)
-- [Websites and delivery systems](websites/)
 
 ## Privacy boundary
 
