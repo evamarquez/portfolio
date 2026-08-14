@@ -61,13 +61,13 @@ reporting logic.
 
 ---
 
-# Reporting Agent — legacy draft
+# Reporting Agent — built implementation
 
 **Built.** This public page describes the system at a high level; private client
 context and implementation details remain out of the portfolio.
 
 `Python` · deterministic data processing · report assembly
-🏢 Client work · public showcase planned · production system private
+🏢 Client work · built system · public summary with private implementation details
 
 ### What it is
 
