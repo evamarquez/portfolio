@@ -87,6 +87,8 @@ to remain stable.
 
 # Remote Role Fit Test
 
+**Related community resource:** [Website Builder SOP](https://github.com/evamarquez/community-resources/tree/main/website-builder)
+
 **A browser-based assessment that routes people to the right remote career track.**
 
 `HTML` · `JavaScript` · serverless functions

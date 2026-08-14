@@ -6,7 +6,7 @@ client workflows, credentials, internal IDs or proprietary process details.
 
 ---
 
-# AI Article Generation Pipeline
+# [AI Article Generation Pipeline](https://github.com/evamarquez/ai-content-pipeline-case-study)
 
 **A multi-stage content production system that took articles from about two days to
 minutes plus editor review.**
@@ -84,6 +84,8 @@ fully automated.
 
 # Reporting Agent
 
+**Public access:** no public version yet. The production system remains private.
+
 **Removed a recurring manual reporting process end to end.**
 
 `Python` · data extraction · deterministic report assembly
@@ -110,6 +112,8 @@ performance results.
 ---
 
 # SC Lead Finder
+
+**Educational version:** [Lead Finder SOP](https://github.com/evamarquez/community-resources/tree/main/lead-finder)
 
 **Finds local businesses with weak or missing websites and scores which product to
 offer first.**

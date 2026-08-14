@@ -58,7 +58,7 @@ production code.
 
 ---
 
-# De 0 a Remoto
+# [De 0 a Remoto](https://de-0-a-remoto.vercel.app)
 
 **A learning platform for people moving into remote work**, with student accounts,
 purchase-gated access, course content and admin workflows.
@@ -101,7 +101,7 @@ course material, no live Stripe keys and no student data.
 
 ---
 
-# AI Article Generation System
+# [AI Article Generation System](https://github.com/evamarquez/ai-content-pipeline-case-study)
 
 **A content production pipeline for an agency serving 17+ e-commerce brands.**
 
@@ -141,6 +141,8 @@ in the [public case study](https://github.com/evamarquez/ai-content-pipeline-cas
 ---
 
 # Multi-platform Scheduler
+
+**Public access:** no public source or live demo is currently available.
 
 **Programs and publishes content across 9+ platforms, every day.**
 

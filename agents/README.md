@@ -44,6 +44,8 @@ and internal reporting logic.
 
 # Executive Assistant
 
+**Educational version:** [Executive Assistant Portfolio](https://github.com/evamarquez/executive-assistant-portfolio) and [Executive Assistant SOP](https://github.com/evamarquez/community-resources/tree/main/executive-assistant)
+
 **A personal executive assistant built as a multi-agent operating system, not a chat
 window with a long prompt.**
 
@@ -94,6 +96,8 @@ removed.
 ---
 
 # SC Lead Finder
+
+**Educational version:** [Lead Finder SOP](https://github.com/evamarquez/community-resources/tree/main/lead-finder)
 
 **An unattended prospecting workflow that finds local businesses and ranks which offer
 fits each one.**
