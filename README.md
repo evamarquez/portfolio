@@ -30,11 +30,15 @@ These are the three case studies I want a recruiter or collaborator to open firs
 
 Operational systems that remove repeated work while keeping judgment with the people who understand the business. This page identifies the public case study, private production work, and educational version for each automation.
 
+- [Client Lifecycle Automation](automations/#full-client-lifecycle-automation) - onboarding and offboarding across Slack, Google Drive, Airtable, and Fillout.
+
 ## Agents
 
 [Open the agents portfolio](agents/)
 
 AI systems with clear boundaries: what the model decides, what deterministic code handles, and where a human remains in control. This page identifies public code, private systems, and community resources.
+
+- [Reporting Agent](agents/#reporting-agent) - extracts data, assembles recurring reports, and removes repetitive manual reporting work.
 
 ## Own products and websites
 
