@@ -22,7 +22,7 @@ system, and manage the rollout until it is adopted instead of abandoned.
 |---|---|
 | **120+** | projects coordinated at 100% on-time delivery |
 | **80+** | automations shipped into production |
-| **200+** | articles produced through an AI pipeline I built |
+| **549** | articles produced across 882 jobs through an AI pipeline I built |
 | **12** | people using the internal CRM I built, every day |
 | **~200** | collection and category pages optimized |
 
@@ -37,7 +37,7 @@ sanitized so they can be evaluated without exposing confidential information.
 | Project | What it proves | Public status |
 |---|---|---|
 | **Internal CRM Migration** | Technical project management, schema redesign, migration planning, rollout, adoption by a 12-person team | [Public case study](https://github.com/evamarquez/internal-crm-case-study) · production system private |
-| **AI Article Generation Pipeline** | Multi-stage AI automation, provider orchestration, editor-in-the-loop design, measurable throughput gain | Public showcase planned |
+| **AI Article Generation Pipeline** | Multi-stage AI automation, provider orchestration, editor-in-the-loop design, measurable throughput gain | [Public case study](https://github.com/evamarquez/ai-content-pipeline-case-study) |
 | **Reporting Agent** | Agent applied to operations: pulls data, assembles reports, removes a recurring manual process | Public showcase planned |
 | **De 0 a Remoto** | Full product build: accounts, payments, gated content, admin workflows | Demo/showcase planned · production repo private |
 | **SC Lead Finder** | Unattended prospecting workflow with scoring and business prioritization | Public showcase planned |

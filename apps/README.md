@@ -120,7 +120,8 @@ adding a file, not rewriting the system.
 
 ### Result
 
-- 200+ articles produced
+- 549 articles produced across 882 jobs
+- Median time from keyword to Google Doc: 4.7 minutes
 - Production reduced from about two days per article to minutes plus editor review
 - Editorial judgment stayed with the human team
 
@@ -132,11 +133,10 @@ was in removing the repetitive work before review, not removing review itself.
 **One brand, one config file.** The prompt stayed general. Brand context lived in data,
 which made the system easier to extend and safer to maintain.
 
-### Public version plan
+### Public version
 
-The showcase version can demonstrate the pipeline with fake brands, sample research,
-mock content constraints and a simplified draft flow. It should not include client
-brands, real prompts tied to client strategy, source documents or production outputs.
+The sanitized architecture, reliability work and measurement corrections are documented
+in the [public case study](https://github.com/evamarquez/ai-content-pipeline-case-study).
 
 ---
 

@@ -25,7 +25,8 @@ provider-specific responsibilities and handoff points for human editors.
 
 ### Result
 
-- 200+ articles produced
+- 549 articles produced across 882 jobs
+- Median time from keyword to Google Doc: 4.7 minutes
 - Production time reduced from about two days per article to minutes plus editor review
 - Brand-specific constraints moved into configuration instead of being buried in prompts
 
@@ -41,7 +42,10 @@ need the same model or tool. The system used different providers where they fit 
 **Brand context lived outside the prompt.** One config file per brand made onboarding
 new clients safer and easier than rewriting the pipeline.
 
-### Public version plan
+### Public version
+
+The sanitized architecture, reliability work and measurement corrections are documented
+in the [public case study](https://github.com/evamarquez/ai-content-pipeline-case-study).
 
 The showcase will use fake brands, mock research inputs, sample constraints and a
 simplified draft flow. It will not include client names, production prompts, private
