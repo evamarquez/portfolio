@@ -45,6 +45,15 @@ sanitized so they can be evaluated without exposing confidential information.
 
 ---
 
+## Case studies
+
+Sanitized write-ups of internal systems work. No client names, source code,
+credentials, or customer data.
+
+- [AI content pipeline](https://github.com/evamarquez/ai-content-pipeline-case-study)
+- [Automation migration](https://github.com/evamarquez/automation-migration-case-study)
+- [Content syndication programme](https://github.com/evamarquez/content-syndication-case-study)
+
 ## Work by System Type
 
 ### Internal Software
