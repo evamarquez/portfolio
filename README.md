@@ -38,7 +38,7 @@ Operational systems that remove repeated work while keeping judgment with the pe
 
 AI systems with clear boundaries: what the model decides, what deterministic code handles, and where a human remains in control. This page identifies public code, private systems, and community resources.
 
-- [Planned New Seas Agent Workflows](agents/#planned-new-seas-agent-workflows) - planned onboarding, offboarding and reporting agents; not built or deployed yet.
+- [New Seas Agent Workflows](agents/#new-seas-agent-workflows) - reporting agent built; onboarding and offboarding workflows planned.
 
 ## Own products and websites
 

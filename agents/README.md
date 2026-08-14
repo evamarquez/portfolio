@@ -6,17 +6,17 @@ decide, what deterministic code handles, and where a human stays in control.
 
 ---
 
-# Planned New Seas Agent Workflows
+# New Seas Agent Workflows
 
-**Status: planned, not built.**
+**Status: mixed — reporting agent built; onboarding and offboarding agents planned.**
 
-These were designed as a future Trigger.dev + Claude Code project. They were never
-deployed as production agents. The current New Seas workflows remain private Make
-automations.
+The reporting agent was built to handle the repeatable reporting workflow. The
+onboarding and offboarding agents remain planned workflows. The current New Seas
+automation source remains private.
 
 The planned stack included Trigger.dev for orchestration, Claude Code for development,
 Slack for notifications, Google Drive for documents, and the internal CRM/database for
-records. This page documents the plan, not completed work.
+records. This page keeps private implementation details out of the public portfolio.
 
 ## Client onboarding agent
 
@@ -43,27 +43,28 @@ manual contractual or access-related work visible.
 **Expected result:** A controlled closeout without pretending that human approvals and
 access decisions can be automated safely.
 
-## Reporting agent
+## Reporting agent — built
 
 **Need:** Recurring reports required repeated data collection, calculation, formatting
 and delivery.
 
-**Plan:** Extract and calculate the numbers deterministically, assemble the report, and
-deliver it through the agreed team channel.
+**What it does:** Extracts and calculates the numbers deterministically, assembles the
+report, and delivers it through the agreed team channel.
 
 **Trigger:** A scheduled reporting run or an approved manual request.
 
-**Expected result:** A consistent report draft; interpretation remains with the person
-who understands the client and business context.
+**Result:** A consistent report draft; interpretation remains with the person who
+understands the client and business context.
 
-These are portfolio plans only. No production result is claimed until the workflows are
-implemented, tested and deployed.
+The public description omits private client data, source mappings and internal
+reporting logic.
 
 ---
 
 # Reporting Agent — legacy draft
 
-**Older draft retained for context; this agent was not built.**
+**Built.** This public page describes the system at a high level; private client
+context and implementation details remain out of the portfolio.
 
 `Python` · deterministic data processing · report assembly
 🏢 Client work · public showcase planned · production system private
@@ -71,16 +72,16 @@ implemented, tested and deployed.
 ### What it is
 
 A recurring report used to be assembled manually: pull the data, organize it, format
-it and deliver it. The planned agent would have removed the repeatable work from the
-process.
+it and deliver it. The agent removed the repeatable work from the process.
 
-The proposed system would pull the required inputs, structure the report and deliver
-the output in the format the team needs. The design prioritizes repeatability and
+The system pulls the required inputs, structures the report and delivers the output in
+the format the team needs. The design prioritizes repeatability and
 auditability, not asking a model to improvise an explanation.
 
 ### Result
 
-No production result is claimed. The workflow remains a future build item.
+The workflow was built to produce a consistent report draft while leaving
+interpretation with the person who knows the client and business context.
 
 ### Design decision
 
