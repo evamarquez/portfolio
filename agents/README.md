@@ -6,9 +6,64 @@ decide, what deterministic code handles, and where a human stays in control.
 
 ---
 
-# Reporting Agent
+# Planned New Seas Agent Workflows
 
-**Removed a recurring manual reporting process end to end.**
+**Status: planned, not built.**
+
+These were designed as a future Trigger.dev + Claude Code project. They were never
+deployed as production agents. The current New Seas workflows remain private Make
+automations.
+
+The planned stack included Trigger.dev for orchestration, Claude Code for development,
+Slack for notifications, Google Drive for documents, and the internal CRM/database for
+records. This page documents the plan, not completed work.
+
+## Client onboarding agent
+
+**Need:** New-client setup involved many steps that had to happen in the right order.
+
+**Plan:** Validate intake, create the required Slack and Drive structure, copy templates,
+write resulting references to the CRM, and report exceptions.
+
+**Trigger:** A completed onboarding form or a new client record.
+
+**Expected result:** A repeatable onboarding handoff with a clear list of anything still
+requiring human action.
+
+## Client offboarding agent
+
+**Need:** Closing a client required coordinated updates across communication, files and
+internal records.
+
+**Plan:** Archive Slack and Drive resources, update the CRM, notify the team, and keep
+manual contractual or access-related work visible.
+
+**Trigger:** An approved client-offboarding event.
+
+**Expected result:** A controlled closeout without pretending that human approvals and
+access decisions can be automated safely.
+
+## Reporting agent
+
+**Need:** Recurring reports required repeated data collection, calculation, formatting
+and delivery.
+
+**Plan:** Extract and calculate the numbers deterministically, assemble the report, and
+deliver it through the agreed team channel.
+
+**Trigger:** A scheduled reporting run or an approved manual request.
+
+**Expected result:** A consistent report draft; interpretation remains with the person
+who understands the client and business context.
+
+These are portfolio plans only. No production result is claimed until the workflows are
+implemented, tested and deployed.
+
+---
+
+# Reporting Agent — legacy draft
+
+**Older draft retained for context; this agent was not built.**
 
 `Python` · deterministic data processing · report assembly
 🏢 Client work · public showcase planned · production system private
@@ -16,23 +71,23 @@ decide, what deterministic code handles, and where a human stays in control.
 ### What it is
 
 A recurring report used to be assembled manually: pull the data, organize it, format
-it and deliver it. I built an agentic workflow that removed the repeatable work from
-the process.
+it and deliver it. The planned agent would have removed the repeatable work from the
+process.
 
-The system pulls the required inputs, structures the report and delivers the output in
-the format the team needs. It is designed around repeatability and auditability, not
-around asking a model to improvise an explanation.
+The proposed system would pull the required inputs, structure the report and deliver
+the output in the format the team needs. The design prioritizes repeatability and
+auditability, not asking a model to improvise an explanation.
 
 ### Result
 
-The manual process disappeared end to end. Not reduced. Removed.
+No production result is claimed. The workflow remains a future build item.
 
 ### Design decision
 
 **The agent presents the numbers; it does not interpret them.** Asking a model to draw
-performance conclusions can turn reporting into storytelling. This system extracts,
-calculates and formats deterministically; analysis stays with the person who knows the
-client.
+performance conclusions can turn reporting into storytelling. The intended design
+extracts, calculates and formats deterministically; analysis stays with the person who
+knows the client.
 
 ### Public version plan
 
