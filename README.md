@@ -59,6 +59,7 @@ credentials, or customer data.
 Resources shared openly with the community, separate from the project case studies.
 
 - [Free community resources](free-community-resources/)
+- [Community Resources library](https://github.com/evamarquez/community-resources)
 - [Executive Assistant Portfolio](https://github.com/evamarquez/executive-assistant-portfolio)
 
 ## Work by System Type
