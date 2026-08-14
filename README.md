@@ -54,6 +54,13 @@ credentials, or customer data.
 - [Automation migration](https://github.com/evamarquez/automation-migration-case-study)
 - [Content syndication programme](https://github.com/evamarquez/content-syndication-case-study)
 
+## Free community resources
+
+Resources shared openly with the community, separate from the project case studies.
+
+- [Free community resources](free-community-resources/)
+- [Executive Assistant Portfolio](https://github.com/evamarquez/executive-assistant-portfolio)
+
 ## Work by System Type
 
 ### Internal Software
