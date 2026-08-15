@@ -9,37 +9,62 @@ systems.
 
 # Eras Conversion
 
-**Agency site for a Meta advertising partnership serving local service businesses.**
+**Agency website plus a repeatable delivery system for local-service businesses.**
 
-`Next.js` · `TypeScript` · `Tailwind` · `Netlify` · multilingual site
-🟢 [eraconversions.com](https://eraconversions.com) · private repo
-
-### What it is
+`Next.js` · `TypeScript` · `Tailwind` · `next-intl` · `OpenNext` · `Cloudflare`
+🟢 [eraconversions.com](https://eraconversions.com) · private production repo
 
 Eras Conversion is an agency I run with two partners. We serve local service
 businesses such as HVAC, landscaping and cleaning companies: businesses where the
-website exists to make the phone ring.
+website exists to make the phone ring. I lead the web service and the automation layer.
 
-Inside the partnership, I lead the web service and the automation layer. The site is
-the public face of that offer.
+### The problem
 
-### The system behind the site
+The partnership began with Meta advertising, but clients also needed websites. The
+delivery process had to become faster and more affordable without making every client
+site look generic or forcing different niches into the same structure.
 
-Clients started asking for websites, not only ads. To make those sites affordable, the
-process had to become faster without becoming generic.
+### The plan
 
-The delivery system is built around niche templates: analyze 2-3 competitors in a
-vertical, identify the shared conversion structure, and turn that into a reusable
-starting point. A cleaning company and an HVAC company should not get the same page,
-but the process for building each niche site can be systematized.
+Use the agency website as the first version of a reusable production system: study two
+or three competitors in each niche, identify the conversion structure that actually
+fits that market, and turn it into a coded starting point. The template changes by
+niche; the delivery method stays repeatable.
 
-### Design decisions
+### Creation: errors and learnings
 
-**Templates per niche, not one generic template.** A template that fits everything fits
-nothing. The structure comes from the real vertical.
+The first instinct was to treat the site as a polished agency brochure. That was too
+far from the business problem. The stronger direction was to organize the offer around
+the decisions a local business owner needs to make: what service is offered, whether it
+fits their niche, what it costs and how to start a conversation.
 
-**The design system lives in code.** Type scale, spacing and palette decisions are
-codified so the tenth site is faster than the first without looking cloned.
+The main learning was that reusable does not mean identical. A good system standardizes
+the research, content structure and implementation patterns while leaving room for the
+real differences between an HVAC company, a cleaning company and a landscaper.
+
+### Production
+
+- Built a bilingual Spanish/English marketing site with localized content and routing.
+- Created pages for the offer, services, cases, company information and contact.
+- Added niche-specific service language instead of one generic agency message.
+- Routed advertising and web inquiries to the appropriate WhatsApp conversation.
+- Connected the contact form to Google Forms/Sheets for lead capture.
+- Added Metricool tracking and responsive interaction patterns.
+- Deployed the current version through OpenNext and Cloudflare.
+
+### Security boundary
+
+The production repository remains private. The public site exposes the agency offer and
+brand, not client data, credentials, internal lead records or the private delivery
+system. Any public portfolio version can describe the method and use representative
+examples without copying private client work.
+
+### Post-production
+
+The result is more than one agency site: it is the foundation for a niche-based web
+delivery service. Future client sites can reuse the coded design system and the
+research-to-template workflow while adapting the message, proof and conversion path to
+each vertical.
 
 ---
 
