@@ -70,24 +70,61 @@ each vertical.
 
 # by-evamarquez.com
 
-**My personal site, bilingual, built on the same stack I use for product work.**
+**Bilingual personal website and publishing hub for my work in AI, project delivery,
+automation and digital products.**
 
 `Next.js 15` · `Supabase` · `Tailwind` · `TypeScript` · `Vercel`
-🟢 [Live](https://www.by-evamarquez.com/) · private repo
+🟢 [Live](https://www.by-evamarquez.com/) · private production repo
 
-### What it is
+This is the front door to my professional ecosystem: who I am, what I build, what I
+teach and where to find the deeper work. It connects the personal brand to De 0 a
+Remoto, the portfolio, educational content and direct contact.
 
-My public site: who I am, what I build and what I write about automation, AI and
-operations. It runs in English and Spanish because my audience is split between Latin
-America and the US.
+### The problem
 
-### Design decisions
+My work spans AI, project management, automation, marketing and remote-work education.
+A single site had to hold that range without making every visitor understand the whole
+history before finding the relevant next step.
 
-**Content lives in files, not a CMS.** Writing and updating content is versioned like
-code. No extra admin panel, no database to maintain for a one-person publishing flow.
+### The plan
 
-**The stack can grow with the site.** Next.js and Supabase make it possible to add
-accounts, gated content or product features later without rebuilding from scratch.
+Create a bilingual, lightweight hub that answers four questions quickly: who I am, what
+I can build, which product or project is relevant, and how to continue. The site routes
+people to the right destination instead of trying to contain every detail on the home
+page.
+
+### Creation: errors and learnings
+
+The main communication risk is breadth. Listing every role equally can make the site
+feel like “a little bit of everything” instead of a clear professional profile. The
+stronger direction is to keep one primary positioning—AI solutions and technical
+project delivery—and use the other areas as supporting proof.
+
+The site also separates the personal story, the De 0 a Remoto product and the future
+blog. That keeps product navigation distinct from professional positioning.
+
+### Production
+
+- Built Spanish and English versions with a language switcher.
+- Added a home page, About page, De 0 a Remoto route, blog route and contact path.
+- Linked the personal site to the product, social channels and professional profiles.
+- Added light/dark theme switching and responsive presentation.
+- Used direct WhatsApp contact for the primary conversion path.
+- Kept the production source private while making the public result easy to inspect.
+
+### Security boundary
+
+The production repository remains private. The public site does not expose private
+operating-system files, credentials, personal databases, client work or live
+integration configuration. Public content should describe the work without becoming a
+dump of the private assistant or business context.
+
+### Post-production
+
+The next improvement is to make the site portfolio-first: lead with the AI solutions
+and technical project-management positioning, give the strongest projects a clear path
+from the homepage, and turn the blog placeholder into a useful index for case studies,
+frameworks and lessons learned.
 
 ---
 
