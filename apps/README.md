@@ -60,44 +60,63 @@ production code.
 
 # [De 0 a Remoto](https://de-0-a-remoto.vercel.app)
 
-**A learning platform for people moving into remote work**, with student accounts,
-purchase-gated access, course content and admin workflows.
+**A product platform that helps people move into remote work through structured
+learning tracks, gated content and guided workflows.**
 
 `Next.js 15` · `Supabase` · `Stripe` · `Tailwind` · `TypeScript`
-🟢 Live product · production repo private · demo/showcase planned
-
-### What it is
+🟢 Live product · production repositories private · public portfolio case study
 
 De 0 a Remoto is a business I own. It teaches people with no prior remote-work
 experience how to move into virtual assistance, digital marketing, project management
 and AI-adjacent roles.
 
-The platform handles the product side: a student buys access, creates an account,
-lands in a dashboard, works through modules and downloads material. On the admin side,
-I manage content, students and access.
+### The problem
 
-### What I built
+People interested in remote work often need more than a collection of lessons. They
+need a clear track, protected material, an account that remembers their progress and a
+business workflow that keeps access and content manageable as the product grows.
 
-- Authentication, sessions and password recovery through Supabase
-- Purchase-gated access connected to Stripe
-- Course content structured by track and rendered by the app
-- Admin workflows for content, students and access
-- Database migrations instead of manual schema edits
+### The plan
 
-### Design decisions
+Build the product as two connected surfaces: a marketing site for acquisition and a
+student platform for paid-user workflows. The platform would handle identity, payment
+access, course delivery and administration without coupling those concerns to landing
+page experiments.
 
-**Content lives in the repository, not in the database.** Course material changes like
-product code: reviewable, revertible and versioned. The database stores user-specific
-state, not the whole course.
+### Creation: errors and learnings
 
-**Marketing site and platform are separate.** The acquisition site changes often. The
-student platform changes carefully. Keeping them separate protects paying users from
-copy tests and landing-page experiments.
+The key design learning was that course content and user state should not have the same
+owner. Course material belongs in the repository so changes are reviewable, revertible
+and versioned like product code. The database stores user-specific state instead of
+becoming an unstructured content dump.
 
-### Public version plan
+Separating the marketing site from the student platform also protects the experience
+of paying users: acquisition pages can change quickly while the product workflows stay
+stable.
 
-The public version should be a reduced demo with sample content, fake users, no real
-course material, no live Stripe keys and no student data.
+### Production
+
+- Built authentication, sessions and password recovery with Supabase.
+- Connected purchase-gated access to Stripe.
+- Structured course content by learning track and rendered it inside the app.
+- Added student dashboard and protected course workflows.
+- Added admin workflows for content, students and access.
+- Managed schema changes through database migrations rather than manual edits.
+- Supported tracks for virtual assistance, digital marketing, project management and
+  AI-adjacent work.
+
+### Security boundary
+
+The production repositories remain private. The public portfolio does not expose
+student accounts, personal data, payment credentials, live Stripe keys, private course
+material or administrative access. A future public demo should use fake users, sample
+content and test payments only.
+
+### Post-production
+
+The result is a reusable product foundation, not only a course landing page. The
+architecture leaves room for additional tracks, content updates and product workflows
+without putting paying users at risk every time the marketing message changes.
 
 ---
 
