@@ -111,7 +111,7 @@ performance results.
 
 ---
 
-# SC Lead Finder
+# Lead Finder
 
 **Educational version:** [Lead Finder SOP](https://github.com/evamarquez/community-resources/tree/main/lead-finder)
 
@@ -124,7 +124,7 @@ Private repo · public showcase planned
 ### What it is
 
 A prospecting workflow for my agency. Every Monday, unattended, it evaluates local
-businesses in South Carolina and returns an ordered list of opportunities.
+businesses and returns an ordered list of opportunities.
 
 The important part is not only finding leads. It scores what product makes sense for
 each business: a website from scratch, ad support, lead capture improvements or a more
