@@ -151,7 +151,7 @@ removed.
 
 ---
 
-# SC Lead Finder
+# Lead Finder
 
 **Educational version:** [Lead Finder SOP](https://github.com/evamarquez/community-resources/tree/main/lead-finder)
 
