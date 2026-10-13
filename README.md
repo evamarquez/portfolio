@@ -25,13 +25,18 @@ My project-management work includes requirements, schedules, dependencies, risks
 
 I build practical AI-enabled workflows and internal systems that connect business needs with usable technical delivery.
 
+For an AI Solutions Engineering review, start with the AI Content Pipeline, then the Automation Migration, and then the Internal CRM case study. Together they show AI orchestration, integrations, reliability, migration judgment, and adoption.
+
 | Project | What it demonstrates |
 |---|---|
 | AI Content Pipeline | Multi-step AI workflow design, reliability controls, editor-in-the-loop review, and operational handoff |
+| Automation Migration | API and data-layer migration, Supabase-backed workflows, idempotency, validation, and defect discovery |
 | Internal CRM Migration | Internal tools, integrations, workflow design, and team adoption |
 | Operational Automations | APIs, webhooks, data transformation, retries, documentation, and human review |
 
 [Open the AI content pipeline case study](https://github.com/evamarquez/ai-content-pipeline-case-study)
+
+[Open the automation migration case study](https://github.com/evamarquez/automation-migration-case-study)
 
 [Open the internal CRM migration case study](https://github.com/evamarquez/internal-crm-case-study)
 
