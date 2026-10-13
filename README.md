@@ -4,15 +4,56 @@
 
 I turn real operations into systems: first automations, then agents, then internal software that teams actually use.
 
-## Start here
+This portfolio follows the same order as my website: AI-assisted products and websites, selected AI automations, focused AI agents, then the broader technical project-management context.
 
-These are the three case studies I want a recruiter or collaborator to open first.
+## 1. Vibe-coded apps
 
-| Order | Project | Open | What it proves |
-|---|---|---|---|
-| 1 | AI Content Pipeline | [Public case study](https://github.com/evamarquez/ai-content-pipeline-case-study) | AI orchestration, reliability, editor-in-the-loop design, and measurable output |
-| 2 | Content Syndication Programme | [Public case study](https://github.com/evamarquez/content-syndication-case-study) | Building from zero, measurement, and correcting unreliable metrics |
-| 3 | Internal CRM Migration | [Public case study](https://github.com/evamarquez/internal-crm-case-study) | Migration planning, system design, rollout, and adoption by a 12-person team |
+AI-assisted products, internal systems, and websites built around a real operating need.
+
+| Order | Project | Public evidence |
+|---|---|---|
+| 1 | AI Content Pipeline | [Case study](https://github.com/evamarquez/ai-content-pipeline-case-study) |
+| 2 | Internal CRM Migration | [Case study](https://github.com/evamarquez/internal-crm-case-study) |
+| 3 | Content Syndication Programme | [Case study](https://github.com/evamarquez/content-syndication-case-study) |
+| 4 | Eras Conversion | [Live website](https://eraconversions.com) |
+| 5 | De 0 a Remoto | [Live product](https://de-0-a-remoto.vercel.app) |
+| 6 | by-evamarquez.com | [Live website](https://www.by-evamarquez.com/) |
+
+The public case studies show the delivery thinking, architecture, controls, evidence, and handoff without exposing production repositories, client records, credentials, or private integrations.
+
+## 2. AI automations
+
+Five representative workflows from a larger operational automation library:
+
+| Order | Automation | Public reference |
+|---|---|---|
+| 1 | Onboarding | [Automation portfolio](automations/) |
+| 2 | Offboarding | [Automation portfolio](automations/) |
+| 3 | Payment follow-up | [Automation portfolio](automations/) |
+| 4 | Sprint kickoff | [Automation portfolio](automations/) |
+| 5 | Sprint follow-up and close | [Automation portfolio](automations/) |
+
+These are selected examples, not the complete catalogue. The public [automation library](https://github.com/evamarquez/automation-library) contains sanitized, reusable patterns; client blueprints, credentials, internal identifiers, and live production context remain private.
+
+## 3. AI agents
+
+Focused assistants with clear boundaries: what the model can decide, what deterministic code handles, and where a person remains in control.
+
+| Order | Agent | Public reference |
+|---|---|---|
+| 1 | Executive assistant | [Public portfolio](https://github.com/evamarquez/executive-assistant-portfolio) |
+| 2 | Onboarding agent | [Agent portfolio](agents/) |
+| 3 | Offboarding agent | [Agent portfolio](agents/) |
+| 4 | Gmail cleaner | [Agent portfolio](agents/) |
+| 5 | Job-hunting assistant | [Agent portfolio](agents/) |
+
+The [agent portfolio](agents/) distinguishes built systems, planned workflows, public guides, and private implementations. It does not present a planned workflow as a shipped product.
+
+## 4. Technical project management
+
+The website presents the wider project-management evidence: planning, migration, delivery controls, documentation, risk decisions, and close-out.
+
+[Open the full website portfolio](https://www.by-evamarquez.com/)
 
 ## Selected proof
 
@@ -24,45 +65,12 @@ These are the three case studies I want a recruiter or collaborator to open firs
 | Internal CRM | 12 daily users |
 | Pages optimized | About 200 collection and category pages |
 
-## Automations
-
-[Open the automations portfolio](automations/)
-
-Operational systems that remove repeated work while keeping judgment with the people who understand the business. This page identifies the public case study, private production work, and educational version for each automation.
-
-- [Client Lifecycle Automation](automations/#full-client-lifecycle-automation) - onboarding and offboarding across Slack, Google Drive, Airtable, and Fillout.
-
-## Agents
-
-[Open the agents portfolio](agents/)
-
-AI systems with clear boundaries: what the model decides, what deterministic code handles, and where a human remains in control. This page identifies public code, private systems, and community resources.
-
-- [New Seas Agent Workflows](agents/#new-seas-agent-workflows) - reporting agent built; onboarding and offboarding workflows planned.
-
-## Own products and websites
-
-These are Eva's own products and websites. Their production source stays private, but the public result is available to inspect.
-
-| Project | What it is | Public link |
-|---|---|---|
-| De 0 a Remoto | Learning platform for remote work with student accounts, gated course content, and admin workflows. | [Live product](https://de-0-a-remoto.vercel.app) |
-| by-evamarquez.com | Bilingual personal website and content platform for Eva's work in automation, AI, and operations. | [Live website](https://www.by-evamarquez.com/) |
-| Eras Conversion | Agency website and repeatable delivery system for local-service businesses. | [Live website](https://eraconversions.com) |
-
-Production repositories for these projects remain private.
-
 ## Free community resources
 
-These are educational versions of the methods behind some of my systems. They use SOPs, mock examples, and safe boundaries. They are not copies of my private repositories.
+These are educational versions of the methods behind some of my systems. They use SOPs, mock examples, and safe boundaries; they are not copies of private repositories.
 
 - [Community Resources library](https://github.com/evamarquez/community-resources)
-  - [Executive Assistant SOP](https://github.com/evamarquez/community-resources/tree/main/executive-assistant)
-  - [AI OS SOP](https://github.com/evamarquez/community-resources/tree/main/ai-os)
-  - [Newsletter SOP](https://github.com/evamarquez/community-resources/tree/main/newsletter)
-  - [Lead Finder SOP](https://github.com/evamarquez/community-resources/tree/main/lead-finder)
-  - [Website Builder SOP](https://github.com/evamarquez/community-resources/tree/main/website-builder)
-- [Newsletter Kit](https://github.com/evamarquez/newsletter-kit) - public community code for a newsletter workflow.
+- [Newsletter Kit](https://github.com/evamarquez/newsletter-kit)
 - [Executive Assistant Portfolio guide](https://github.com/evamarquez/executive-assistant-portfolio)
 
 ## Privacy boundary
