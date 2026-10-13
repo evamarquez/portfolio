@@ -4,8 +4,19 @@ Systems where a model makes decisions inside a structure I designed. The importa
 question is not whether a model is involved; it is what the system lets the model
 decide, what deterministic code handles, and where a human stays in control.
 
+## Featured website examples
+
+These are the five representative assistants shown in the website portfolio. The public page distinguishes what is documented, planned, and private instead of implying that every workflow is a public code repository.
+
+1. **Executive assistant** — [public portfolio](https://github.com/evamarquez/executive-assistant-portfolio).
+2. **Onboarding agent** — planned workflow described in [New Seas Agent Workflows](#client-onboarding-agent).
+3. **Offboarding agent** — planned workflow described in [New Seas Agent Workflows](#client-offboarding-agent).
+4. **Gmail cleaner** — personal operations workflow; implementation details remain private.
+5. **Job-hunting assistant** — personal career workflow; implementation details remain private.
+
 ---
 
+---
 # New Seas Agent Workflows
 
 **Status: mixed — reporting agent built; onboarding and offboarding agents planned.**
