@@ -1,6 +1,6 @@
 # Eva Marquez
 
-**Technical Project Manager | AI Solutions Engineering | Internal Tools**
+**Software Implementation | AI Automation & Integrations | Technical Project Delivery**
 
 I turn real operations into systems: first automations, then agents, then internal software that teams actually use.
 
@@ -79,6 +79,6 @@ Client work, employer infrastructure, personal operating systems, credentials, a
 
 ## Currently
 
-Open to remote roles in the US: **Technical Project Manager**, **IT Project Manager**, **AI Project Manager**, **AI Solutions Engineer**, and **Implementation Manager**.
+Open to remote roles in the US: **Implementation Specialist**, **Business Systems Specialist**, **AI Automation & Integration Specialist**, **Technical Project Coordinator**, **Associate Project Manager**, and **Technical Project Manager**.
 
 [Website](https://www.by-evamarquez.com/) | [LinkedIn](https://www.linkedin.com/in/byevamarquez/) | [Email](mailto:evapatriciamarquez@gmail.com)
