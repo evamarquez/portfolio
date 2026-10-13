@@ -1,84 +1,60 @@
 # Eva Marquez
 
-**Technical Project Manager | AI Solutions Engineering | Internal Tools**
+**Project Manager | AI Solutions Engineer**
 
-I turn real operations into systems: first automations, then agents, then internal software that teams actually use.
+I lead digital projects from business need to delivery and adoption. I combine project planning, stakeholder coordination, technical delivery, and applied AI automation to help teams finish useful work.
 
-This portfolio follows the same order as my website: AI-assisted products and websites, selected AI automations, focused AI agents, then the broader technical project-management context.
+This portfolio is organized around the two roles I am pursuing:
 
-## 1. Vibe-coded apps
+1. Project management across digital, creative, marketing, web, and technical delivery
+2. AI solutions engineering for practical automation, integrations, and internal tools
 
-AI-assisted products, internal systems, and websites built around a real operating need.
+## Technical project management
 
-| Order | Project | Public evidence |
-|---|---|---|
-| 1 | AI Content Pipeline | [Case study](https://github.com/evamarquez/ai-content-pipeline-case-study) |
-| 2 | Internal CRM Migration | [Case study](https://github.com/evamarquez/internal-crm-case-study) |
-| 3 | Content Syndication Programme | [Case study](https://github.com/evamarquez/content-syndication-case-study) |
-| 4 | Eras Conversion | [Live website](https://eraconversions.com) |
-| 5 | De 0 a Remoto | [Live product](https://de-0-a-remoto.vercel.app) |
-| 6 | by-evamarquez.com | [Live website](https://www.by-evamarquez.com/) |
+My project-management work includes requirements, schedules, dependencies, risks, documentation, migrations, delivery follow-through, and adoption.
 
-The public case studies show the delivery thinking, architecture, controls, evidence, and handoff without exposing production repositories, client records, credentials, or private integrations.
+| Project | What it demonstrates |
+|---|---|
+| Internal CRM Migration | Process mapping, data-model decisions, migration planning, coexistence, rollout, and adoption by a 12-person team |
+| Content Syndication Programme | Building a repeatable operating model, measurement, and honest correction of unreliable metrics |
+| AHI App Development Project | Portfolio case study covering scope, WBS, risks, changes, reporting, and close-out |
 
-## 2. AI automations
+[Open the technical project-management profile](https://www.by-evamarquez.com/technical-project-management)
 
-Five representative workflows from a larger operational automation library:
+## AI solutions engineering
 
-| Order | Automation | Public reference |
-|---|---|---|
-| 1 | Onboarding | [Automation portfolio](automations/) |
-| 2 | Offboarding | [Automation portfolio](automations/) |
-| 3 | Payment follow-up | [Automation portfolio](automations/) |
-| 4 | Sprint kickoff | [Automation portfolio](automations/) |
-| 5 | Sprint follow-up and close | [Automation portfolio](automations/) |
+I build practical AI-enabled workflows and internal systems that connect business needs with usable technical delivery.
 
-These are selected examples, not the complete catalogue. The public [automation library](https://github.com/evamarquez/automation-library) contains sanitized, reusable patterns; client blueprints, credentials, internal identifiers, and live production context remain private.
+| Project | What it demonstrates |
+|---|---|
+| AI Content Pipeline | Multi-step AI workflow design, reliability controls, editor-in-the-loop review, and operational handoff |
+| Internal CRM Migration | Internal tools, integrations, workflow design, and team adoption |
+| Operational Automations | APIs, webhooks, data transformation, retries, documentation, and human review |
 
-## 3. AI agents
+[Open the AI content pipeline case study](https://github.com/evamarquez/ai-content-pipeline-case-study)
 
-Focused assistants with clear boundaries: what the model can decide, what deterministic code handles, and where a person remains in control.
+[Open the internal CRM migration case study](https://github.com/evamarquez/internal-crm-case-study)
 
-| Order | Agent | Public reference |
-|---|---|---|
-| 1 | Executive assistant | [Public portfolio](https://github.com/evamarquez/executive-assistant-portfolio) |
-| 2 | Onboarding agent | [Agent portfolio](agents/) |
-| 3 | Offboarding agent | [Agent portfolio](agents/) |
-| 4 | Gmail cleaner | [Agent portfolio](agents/) |
-| 5 | Job-hunting assistant | [Agent portfolio](agents/) |
-
-The [agent portfolio](agents/) distinguishes built systems, planned workflows, public guides, and private implementations. It does not present a planned workflow as a shipped product.
-
-## 4. Technical project management
-
-The website presents the wider project-management evidence: planning, migration, delivery controls, documentation, risk decisions, and close-out.
-
-[Open the full website portfolio](https://www.by-evamarquez.com/)
+[Open the automation portfolio](automations/)
 
 ## Selected proof
 
-| Metric | Result |
+| Evidence | Result |
 |---|---|
-| Projects coordinated | 120+ at 100% on-time delivery |
+| Projects coordinated | 120+ with 100% on-time delivery |
 | Automations shipped | 80+ into production |
-| AI content pipeline | 549 articles across 882 jobs |
-| Internal CRM | 12 daily users |
-| Pages optimized | About 200 collection and category pages |
-
-## Free community resources
-
-These are educational versions of the methods behind some of my systems. They use SOPs, mock examples, and safe boundaries; they are not copies of private repositories.
-
-- [Community Resources library](https://github.com/evamarquez/community-resources)
-- [Newsletter Kit](https://github.com/evamarquez/newsletter-kit)
-- [Executive Assistant Portfolio guide](https://github.com/evamarquez/executive-assistant-portfolio)
+| AI content workflow | 200+ articles produced in minutes, with editor review |
+| Internal CRM | Daily use by a 12-person team |
+| Process improvement | 50% productivity improvement in a project-coordination context |
 
 ## Privacy boundary
 
-Client work, employer infrastructure, personal operating systems, credentials, and live integration details stay private. Public case studies are sanitized, and community resources use fictional examples.
+Client work, employer infrastructure, credentials, private records, and live integration details remain private. Public case studies are sanitized and explain the delivery decisions, evidence, controls, and handoff without exposing protected material.
 
-## Currently
+## Current direction
 
-Open to remote roles in the US: **Implementation Specialist**, **Business Systems Specialist**, **AI Automation & Integration Specialist**, **Technical Project Coordinator**, **Associate Project Manager**, and **Technical Project Manager**.
+I am pursuing Project Manager, Digital Project Manager, Creative Project Manager, Technical Project Manager, Associate Project Manager, Technical Project Coordinator, and AI Solutions Engineer roles.
+
+IBM Technical Project Manager Professional Certificate: **in progress**.
 
 [Website](https://www.by-evamarquez.com/) | [LinkedIn](https://www.linkedin.com/in/byevamarquez/) | [Email](mailto:evapatriciamarquez@gmail.com)
