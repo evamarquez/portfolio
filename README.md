@@ -1,6 +1,6 @@
 # Eva Marquez
 
-**Software Implementation | AI Automation & Integrations | Technical Project Delivery**
+**Technical Project Manager | AI Solutions Engineering | Internal Tools**
 
 I turn real operations into systems: first automations, then agents, then internal software that teams actually use.
 
