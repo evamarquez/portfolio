@@ -4,8 +4,21 @@ Systems that remove repeated operational work and leave judgment with the people
 understand the business. The production automations are private when they contain
 client workflows, credentials, internal IDs or proprietary process details.
 
+## Featured website examples
+
+These are the five representative workflows shown in the website portfolio. They are presented as operating patterns; private client blueprints and production identifiers are not published.
+
+1. **Onboarding** — prepare the right people, records, access, and notifications for a new person or client.
+2. **Offboarding** — close access, records, and handoff steps in one visible process.
+3. **Payment follow-up** — keep payment reminders and status updates moving without repeated manual checks.
+4. **Sprint kickoff** — turn a new sprint into a clear starting point with scope, owners, and next steps.
+5. **Sprint follow-up and close** — capture progress, blockers, decisions, and close-out actions.
+
+The examples connect to the wider [automation library](https://github.com/evamarquez/automation-library), while this page explains the delivery thinking behind the systems.
+
 ---
 
+---
 # [AI Article Generation Pipeline](https://github.com/evamarquez/ai-content-pipeline-case-study)
 
 **A multi-stage content production system that took articles from about two days to
