@@ -25,8 +25,8 @@ The reporting agent was built to handle the repeatable reporting workflow. The
 onboarding and offboarding agents remain planned workflows. The current New Seas
 automation source remains private.
 
-The planned stack included Trigger.dev for orchestration, Claude Code for development,
-Slack for notifications, Google Drive for documents, and the internal CRM/database for
+The planned stack included Trigger.dev for orchestration, Slack for notifications,
+Google Drive for documents, and the internal CRM/database for
 records. This page keeps private implementation details out of the public portfolio.
 
 ## Client onboarding agent
